@@ -1,0 +1,7 @@
+E:\.DesktopNew\RVA-Projekat\Server\Server\obj\Debug\net6.0\Server.csproj.AssemblyReference.cache
+E:\.DesktopNew\RVA-Projekat\Server\Server\obj\Debug\net6.0\Server.GeneratedMSBuildEditorConfig.editorconfig
+E:\.DesktopNew\RVA-Projekat\Server\Server\obj\Debug\net6.0\Server.AssemblyInfoInputs.cache
+E:\.DesktopNew\RVA-Projekat\Server\Server\obj\Debug\net6.0\Server.AssemblyInfo.cs
+E:\.DesktopNew\RVA-Projekat\Server\Server\obj\Debug\net6.0\Server.csproj.CoreCompileInputs.cache
+E:\.DesktopNew\RVA-Projekat\Server\Server\obj\Debug\net6.0\Server.MvcApplicationPartsAssemblyInfo.cs
+E:\.DesktopNew\RVA-Projekat\Server\Server\obj\Debug\net6.0\Server.MvcApplicationPartsAssemblyInfo.cache
