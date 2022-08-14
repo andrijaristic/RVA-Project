@@ -10,6 +10,5 @@ namespace Server.Models
         public string Name { get; set; } = string.Empty;
         public string Lastname { get; set; } = string.Empty;
         public EUserType UserType { get; set; }
-        //public Dictionary<Exam, bool> Exams { get; set; } = new Dictionary<Exam, bool>(); // Dict<Exam, passed/failed>
     }
 }

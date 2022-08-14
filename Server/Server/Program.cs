@@ -109,10 +109,18 @@ builder.Services.AddScoped<IValidation<User>, UserValidation>();
 #region DataInitializers
 builder.Services.AddScoped<IDataInitializer, DataInitializer>();
 builder.Services.AddScoped<IUserDataInitializer, UserDataInitializer>();
+builder.Services.AddScoped<IStudentDataInitializer, StudentDataInitializer>();
+builder.Services.AddScoped<ISubjectDataInitializer, SubjectDataInitializer>();
+builder.Services.AddScoped<IExamDataInitializer, ExamDataInitializer>();
+builder.Services.AddScoped<IStudentResultDataInitializer, StudentResultDataInitializer>();
 #endregion
 
 #region Repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped <IStudentRepository, StudentRepository>();
+builder.Services.AddScoped <ISubjectRepository, SubjectRepository>(); 
+builder.Services.AddScoped<IExamRepository, ExamRepository>();
+builder.Services.AddScoped<IStudentResultRepository, StudentResultRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddDbContext<FacultyDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("FacultyDbContext")));  // Make the DB.
 #endregion

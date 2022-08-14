@@ -52,6 +52,7 @@ namespace Server.Services
             return authDTO;
         }
 
+        // Make a new Student class entity every time STUDENT is registered.
         public async Task<User> RegisterNewUser(RegisterDTO registerDTO)
         {
             User user = _mapper.Map<User>(registerDTO);

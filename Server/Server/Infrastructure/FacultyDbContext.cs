@@ -7,6 +7,10 @@ namespace Server.Infrastructure
     {
         //Ovde definisemo DbSetove (tabele)
         public DbSet<User> Users { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Subject> Subject { get; set; }
+        public DbSet<Exam> Exams { get; set; }
+        public DbSet<StudentResult> StudentResult { get; set; }
 
         public FacultyDbContext(DbContextOptions options) : base(options)
         {

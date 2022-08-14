@@ -1,9 +1,10 @@
 ﻿namespace Server.Models
 {
-    public class Subject
+    public class Student
     {
         public int Id { get; set; }
+        public string Name { get; set; }    
+        public string LastName { get; set; }
         public List<Exam> Exams { get; set; } = new List<Exam>();
-        public string SubjectName { get; set; } = string.Empty;
     }
 }
