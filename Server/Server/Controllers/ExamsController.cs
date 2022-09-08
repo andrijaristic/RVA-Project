@@ -19,6 +19,7 @@ namespace Server.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Policy = "SystemUser")]
         public async Task<IActionResult> Get(int id)
         {
             try
@@ -32,6 +33,7 @@ namespace Server.Controllers
         }
 
         [HttpGet]
+        [Authorize(Policy = "SystemUser")]
         public async Task<IActionResult> Get()
         {
             try

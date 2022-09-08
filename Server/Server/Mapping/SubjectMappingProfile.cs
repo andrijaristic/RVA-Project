@@ -9,6 +9,8 @@ namespace Server.Mapping
         public SubjectMappingProfile()
         {
             CreateMap<Subject, DisplaySubjectDTO>().ReverseMap();
+            CreateMap<Subject, DetailedSubjectDTO>().ReverseMap();
+            CreateMap<Subject, NewSubjectDTO>().ReverseMap();
         }
     }
 }

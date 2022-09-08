@@ -7,5 +7,7 @@ namespace Server.Interfaces.RepositoryInterfaces
     {
         Subject GetSubject(int subjectId);
         Task<Subject> GetSubjectAsync(int subjectId);
+        Task<List<Subject>> GetSubjectsComplete();
+        Task<Subject> GetSubjectComplete(int subjectId);
     }
 }
