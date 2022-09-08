@@ -7,6 +7,6 @@
         public int SubjectId { get; set; }
         public Subject Subject { get; set; }
         public DateTime ExamDate { get; set; }
-        public List<StudentResult> StudentResults { get; set; } = new List<StudentResult>();   // List of Students attending exam;
+        public List<StudentResult> StudentResults { get; set; } = new List<StudentResult>();  // List of Students attending exam;
     }
 }

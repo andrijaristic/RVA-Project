@@ -9,8 +9,8 @@ namespace Server.Infrastructure.Configurations
         public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).ValueGeneratedOnAdd(); // Primary DB Key will be generated when added.
-            builder.HasIndex(x => x.Username).IsUnique();   // Username must be unique.
+            builder.Property(x => x.Id).ValueGeneratedOnAdd(); 
+            builder.HasIndex(x => x.Username).IsUnique();   
         }
     }
 }

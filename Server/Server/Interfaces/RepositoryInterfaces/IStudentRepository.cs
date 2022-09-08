@@ -1,10 +1,13 @@
-﻿using Server.Models;
+﻿using Server.Dto.UserDto;
+using Server.Models;
 
 namespace Server.Interfaces.RepositoryInterfaces
 {
     public interface IStudentRepository : IGenericRepository<Student>
     {
-        Task<Student> GetStudentAsync(int studentId);
         Student GetStudent(int studentId);
+        Task<Student> GetStudentAsync(int studentId);
+        Task<Student> GetStudentForUser(string username);
+        Task<List<Student>> GetStudentsForUser(string username);
     }
 }

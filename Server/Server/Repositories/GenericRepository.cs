@@ -35,5 +35,10 @@ namespace Server.Repositories
             List<T> entities = await _dbContext.Set<T>().ToListAsync();
             return entities;
         }
+
+        public void Remove(T entity)
+        {
+            _dbContext.Set<T>().Remove(entity);
+        }
     }
 }

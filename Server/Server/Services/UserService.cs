@@ -49,6 +49,39 @@ namespace Server.Services
             AuthenticatedDTO authDTO = _mapper.Map<AuthenticatedDTO>(user);
             authDTO.Token = token;
 
+            // #TODO: Improve and/or simplify logic.
+            //List<Student> students = await _unitOfWork.Students.GetStudentsForUser(loginDTO.Username);
+            //Student student = students[0];
+            //students.Clear();
+            //Student student = await _unitOfWork.Students.GetStudentForUser(loginDTO.Username);
+
+            //List<StudentResult> results = await _unitOfWork.StudentResults.GetExamsForStudent(student.Id);
+
+            //List<Exam> exams = new List<Exam>();
+            //foreach (var el in results)
+            //{
+            //    //Exam exam = await _unitOfWork.Exams.GetExamAsync(el.ExamId);
+            //    Exam exam = await _unitOfWork.Exams.GetExamComplete(el.ExamId);
+            //    if (exam != null)
+            //    {
+            //        exams.Add(exam);
+            //    }
+            //}
+
+            // Priority => #TODO: Simplify. 17/08 - Fixed with repo function above.
+            //foreach (var el in exams)
+            //{
+            //    foreach (var _el in results)
+            //    {
+            //        if (_el.ExamId == el.Id)
+            //        {
+            //            el.StudentResults.Add(_el);
+            //        }
+            //    }
+            //}
+
+            //authDTO.Exams = exams;
+
             return authDTO;
         }
 
@@ -65,8 +98,11 @@ namespace Server.Services
 
             user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
             user.UserType = Enums.EUserType.STUDENT;
-            //user.Exams = new List<int>();
+
+            Student student = _mapper.Map<Student>(registerDTO);
+
             await _unitOfWork.Users.AddAsync(user);
+            await _unitOfWork.Students.AddAsync(student);
             await _unitOfWork.SaveAsync();
 
             return user;
@@ -88,6 +124,14 @@ namespace Server.Services
             if (!result.isValid)
             {
                 throw new Exception(result.Message);
+            }
+
+            // Update Student sa tim Username.
+            List<Student> students = await _unitOfWork.Students.GetStudentsForUser(updateDTO.Username);
+            foreach (var el in students)
+            {
+                el.Name = updateDTO.Name;
+                el.LastName = updateDTO.LastName;
             }
 
             await _unitOfWork.SaveAsync();

@@ -9,7 +9,24 @@ namespace Server.Repositories
     {
         public StudentResultRepository(FacultyDbContext dbContext) : base(dbContext)
         {
+        }
 
+        public async Task<List<StudentResult>> GetExamsForStudent(int studentId)
+        {
+            List<StudentResult> examIds = await _dbContext.StudentResult.Where(x => x.StudentId == studentId).Include(x => x.Exam).Include(x => x.Student).ToListAsync();
+            return examIds;
+        }
+
+        public async Task<List<StudentResult>> GetStudentsForExam(int id)
+        {
+            List<StudentResult> students = await _dbContext.StudentResult.Where(x => x.ExamId == id).Include(x => x.Student).ToListAsync();
+            return students;
+        }
+
+        public async Task<StudentResult> GetStudentForExam(int studentId, int examId)
+        {
+            StudentResult student = await _dbContext.StudentResult.SingleOrDefaultAsync(x => x.StudentId == studentId && x.ExamId == examId);
+            return student;
         }
     }
 }

@@ -4,7 +4,10 @@ namespace Server.Interfaces.RepositoryInterfaces
 {
     public interface IExamRepository : IGenericRepository<Exam>
     {
-        Task<Exam> GetExamAsync(int examId);
         Exam GetExam(int examId);
+        Task<Exam> GetExamAsync(int examId);
+        Task<Exam> GetExamComplete(int examId);
+        Task<List<Exam>> GetAllExamsComplete();
+
     }
 }

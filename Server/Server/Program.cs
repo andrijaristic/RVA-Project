@@ -20,11 +20,6 @@ using Server.UnitOfWork;
 using Server.Validations;
 using System.Text;
 
-//// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-//builder.Services.AddEndpointsApiExplorer();
-
-// Add services to the container.
-
 string _cors = "cors";
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
@@ -43,7 +38,7 @@ builder.Services.AddSwaggerGen(c =>
         Scheme = "bearer"
     });
 
-    // Doesn't work without nested {}. 
+    
     c.AddSecurityRequirement(new OpenApiSecurityRequirement {
         {
             new OpenApiSecurityScheme
@@ -54,7 +49,7 @@ builder.Services.AddSwaggerGen(c =>
                     Id = "Bearer"
                 }
             }, 
-            new string[]{ }
+            new string[]{}
         }
     });
 });
@@ -96,6 +91,8 @@ builder.Services.AddCors(options =>
 
 #region Services
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IExamService, ExamService>();
+builder.Services.AddScoped<IStudentResultService, StudentResultService>();
 #endregion
 
 #region Factories
@@ -117,9 +114,9 @@ builder.Services.AddScoped<IStudentResultDataInitializer, StudentResultDataIniti
 
 #region Repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped <IStudentRepository, StudentRepository>();
-builder.Services.AddScoped <ISubjectRepository, SubjectRepository>(); 
 builder.Services.AddScoped<IExamRepository, ExamRepository>();
+builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+builder.Services.AddScoped<ISubjectRepository, SubjectRepository>(); 
 builder.Services.AddScoped<IStudentResultRepository, StudentResultRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddDbContext<FacultyDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("FacultyDbContext")));  // Make the DB.
@@ -128,6 +125,10 @@ builder.Services.AddDbContext<FacultyDbContext>(options => options.UseSqlServer(
 var mapperConfig = new MapperConfiguration(mc =>
 {
     mc.AddProfile(new UserMappingProfile());
+    mc.AddProfile(new ExamMappingProfile());
+    mc.AddProfile(new StudentMappingProfile());
+    mc.AddProfile(new StudentResultMappingProfile());
+    mc.AddProfile(new SubjectMappingProfile());
 });
 
 IMapper mapper = mapperConfig.CreateMapper();

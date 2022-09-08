@@ -11,7 +11,6 @@ namespace Server.Repositories
         {
 
         }
-
         public Exam GetExam(int examId)
         {
             Exam exam = _dbContext.Exams.SingleOrDefault<Exam>(exam => exam.Id == examId);
@@ -22,6 +21,18 @@ namespace Server.Repositories
         {
             Exam exam = await _dbContext.Exams.SingleOrDefaultAsync<Exam>(exam => exam.Id == examId);
             return exam;
+        }
+
+        public async Task<Exam> GetExamComplete(int examId)
+        {
+            Exam exam = await _dbContext.Exams.Include(x => x.Subject).Include(x => x.StudentResults).ThenInclude(s => s.Student).SingleOrDefaultAsync<Exam>(x => x.Id == examId);
+            return exam;
+        }
+
+        public async Task<List<Exam>> GetAllExamsComplete()
+        {
+            List<Exam> exams = await _dbContext.Exams.Include(x => x.StudentResults).ToListAsync();
+            return exams;
         }
     }
 }
