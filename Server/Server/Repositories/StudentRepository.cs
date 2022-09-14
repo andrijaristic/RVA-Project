@@ -27,16 +27,14 @@ namespace Server.Repositories
 
         public async Task<Student> GetStudentForUser(string username)
         {
-            //Student student = await _dbContext.Students.SingleOrDefaultAsync<Student>(s => s.Username == username);
-            //return student;
-            throw new Exception();
+            Student student = await _dbContext.Students.SingleOrDefaultAsync<Student>(s => s.UserUsername == username);
+            return student;
         }
 
         public async Task<List<Student>> GetStudentsForUser(string username)
         {
-            //List<Student> students = await _dbContext.Students.Where(s => s.Username == username).ToListAsync();
-            //return students;
-            throw new Exception();
+            List<Student> students = await _dbContext.Students.Where(s => s.UserUsername == username).ToListAsync();
+            return students;
         }
     }
 }

@@ -47,7 +47,7 @@ namespace Server.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("StudentId");
+                    b.HasIndex("StudentId"); //?
 
                     b.HasIndex("SubjectId");
 

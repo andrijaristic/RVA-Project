@@ -74,7 +74,7 @@ builder.Services.AddAuthentication(opt =>
         ValidateAudience = false, //Kazemo da ne validira primaoce tokena
         ValidateLifetime = true, //Validira trajanje tokena
         ValidateIssuerSigningKey = true, //validira potpis token, ovo je jako vazno!
-        ValidIssuer = "http://localhost:44398", //odredjujemo koji server je validni izdavalac
+        ValidIssuer = "http://localhost:44344", //odredjujemo koji server je validni izdavalac
         IssuerSigningKey = key //navodimo privatni kljuc kojim su potpisani nasi tokeni
     };
 });
@@ -82,7 +82,7 @@ builder.Services.AddAuthentication(opt =>
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: _cors, builder => {
-        builder.WithOrigins("https://localhost:3000") //Ovde navodimo koje sve aplikacije smeju kontaktirati nasu,u ovom slucaju nas Angular front
+        builder.WithOrigins("http://localhost:3000") //Ovde navodimo koje sve aplikacije smeju kontaktirati nasu,u ovom slucaju nas Angular front
                .AllowAnyHeader()
                .AllowAnyMethod()
                .AllowCredentials();

@@ -100,6 +100,7 @@ namespace Server.Services
             user.UserType = Enums.EUserType.STUDENT;
 
             Student student = _mapper.Map<Student>(registerDTO);
+            student.UserUsername = user.Username;
 
             await _unitOfWork.Users.AddAsync(user);
             await _unitOfWork.Students.AddAsync(student);

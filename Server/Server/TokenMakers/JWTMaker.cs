@@ -24,7 +24,7 @@ namespace Server.TokenMakers
             var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
             var tokenOptions = new JwtSecurityToken
             (
-                issuer: "http://localhost:44398",
+                issuer: "http://localhost:44344",
                 claims: claims,
                 expires: DateTime.Now.AddMinutes(45),
                 signingCredentials: signinCredentials
