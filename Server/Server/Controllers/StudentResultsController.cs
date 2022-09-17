@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Server.Dto;
+using Server.Dto.ExamDto;
 using Server.Dto.StudentDto;
 using Server.Dto.StudentResultDto;
 using Server.Interfaces.ServiceInterfaces;
@@ -31,11 +33,26 @@ namespace Server.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest(e.Message);
+                ErrorDTO error = new ErrorDTO() { Title = "Error", Message = e.Message };
+                return BadRequest(error);
             }
         }
 
-        [HttpPut("apply")]
+        [HttpGet("get-exams/{id}")]
+        public async Task<IActionResult> GetStudentExams(int id)
+        {
+            try
+            {
+                List<StudentExamsDTO> registedExams = await _studentResultService.GetExamsForStudent(id);
+                return Ok(registedExams);
+            } catch (Exception e)
+            {
+                ErrorDTO error = new ErrorDTO() { Title = "Error", Message = e.Message };
+                return BadRequest(error);
+            }
+        }
+
+        [HttpPost("apply")]
         [Authorize(Policy = "SystemUser")]
         public async Task<IActionResult> AddStudent([FromBody] AddStudentResultDTO addStudentResultDTO)
         {
@@ -50,7 +67,7 @@ namespace Server.Controllers
             }
         }
 
-        [HttpPut("remove")]
+        [HttpDelete("remove")]
         [Authorize(Policy = "SystemUser")]
         public async Task<IActionResult> RemoveStudent([FromBody] AddStudentResultDTO addStudentDTO)
         {

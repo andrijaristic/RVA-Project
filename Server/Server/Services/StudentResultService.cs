@@ -76,5 +76,16 @@ namespace Server.Services
 
             return _mapper.Map<List<DisplayStudentResultDTO>>(students);
         }
+
+        public async Task<List<StudentExamsDTO>> GetExamsForStudent(int id)
+        {
+            List<StudentResult> exams = await _unitOfWork.StudentResults.GetExamsForStudent(id);
+            if (exams == null)
+            {
+                throw new Exception($"Student with ID [{id}] has no registered exams.");
+            }
+
+            return _mapper.Map<List<StudentExamsDTO>>(exams);
+        }
     }
 }

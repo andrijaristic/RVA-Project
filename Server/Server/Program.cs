@@ -92,6 +92,7 @@ builder.Services.AddCors(options =>
 #region Services
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IExamService, ExamService>();
+builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<ISubjectService, SubjectService>();
 builder.Services.AddScoped<IStudentResultService, StudentResultService>();
 #endregion

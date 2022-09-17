@@ -27,7 +27,7 @@ namespace Server.Services
             _userValidation = userValidation;
         }
 
-        public async Task<AuthenticatedDTO> Login(LoginDTO loginDTO)
+        public async Task<AuthDTO> Login(LoginDTO loginDTO)
         {
             User user = await _unitOfWork.Users.FindUserByUsername(loginDTO.Username);
 
@@ -46,7 +46,7 @@ namespace Server.Services
             SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey.Value));
             string token = tokenMaker.CreateToken(user, key);
 
-            AuthenticatedDTO authDTO = _mapper.Map<AuthenticatedDTO>(user);
+            AuthDTO authDTO = _mapper.Map<AuthDTO>(user);
             authDTO.Token = token;
 
             // #TODO: Improve and/or simplify logic.

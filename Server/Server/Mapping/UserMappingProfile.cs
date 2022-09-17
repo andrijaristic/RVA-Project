@@ -9,7 +9,7 @@ namespace Server.Mapping
         public UserMappingProfile()
         {
             CreateMap<User, RegisterDTO>().ReverseMap();
-            CreateMap<User, AuthenticatedDTO>().ReverseMap();
+            CreateMap<User, AuthDTO>().ReverseMap();
             CreateMap<User, UpdateDTO>().ReverseMap();
         }
     }

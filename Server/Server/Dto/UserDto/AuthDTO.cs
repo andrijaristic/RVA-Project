@@ -3,7 +3,7 @@ using Server.Models;
 
 namespace Server.Dto.UserDto
 {
-    public class AuthenticatedDTO
+    public class AuthDTO
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;

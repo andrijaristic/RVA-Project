@@ -1,4 +1,5 @@
 import React, { useReducer, useRef, useContext, useState } from "react";
+import useHttp from "../../hooks/use-http";
 import { useHistory } from "react-router-dom";
 
 import classes from "./RegisterForm.module.css";
@@ -6,15 +7,17 @@ import classes from "./RegisterForm.module.css";
 import AuthContext from "../../store/auth-context";
 import Card from "../UI/Card/Card";
 import Input from "../UI/Input/Input";
+import Select from "../UI/Input/Select";
 import Button from "../UI/Button/Button";
-import useHttp from "../../hooks/use-http";
+import LoadingModal from "../UI/Modals/LoadingModal";
+import InfoModal from "../UI/Modals/InfoModal";
 
 const USER_TYPES = [
   {
     id: 1,
-    type: "STUDENT",
+    name: "STUDENT",
   },
-  { id: 2, type: "ADMIN" },
+  { id: 2, name: "ADMIN" },
 ];
 
 const initInputState = {
@@ -74,7 +77,7 @@ const RegisterForm = () => {
   const history = useHistory();
   const { isLoading, sendRequest } = useHttp();
 
-  // const [infoData, setInfoData] = useState(null);
+  const [infoData, setInfoData] = useState(null);
   const [inputState, dispatchInputState] = useReducer(
     inputReducer,
     initInputState
@@ -144,6 +147,15 @@ const RegisterForm = () => {
     });
   };
 
+  const hideErrorModalHandler = () => {
+    setInfoData(null);
+  };
+
+  const hideSuccessModalHandler = () => {
+    setInfoData(null);
+    history.replace("/");
+  };
+
   const submitHandler = async (event) => {
     event.preventDefault();
 
@@ -159,23 +171,34 @@ const RegisterForm = () => {
         password: passwordRef.current.value,
         name: nameRef.current.value,
         lastName: lastNameRef.current.value,
-        userType: USER_TYPES[1],
+        userType: userTypeRef.current.value,
       }),
     };
 
     const data = await sendRequest(requestConfig);
     // ErrorDTO i SuccessDTO koji nedostaju na Backend-u.
-    // setInfoData({
-    //   title: data.hasError ? "Error" : "Success",
-    //   message: data.hasError ? data.message : "User successfully added.",
-    // });
+    setInfoData({
+      title: data.title,
+      message: data.hasError ? data.errorMessage : "User successfully added.",
+    });
 
     history.replace("/login");
   };
 
   return (
     <React.Fragment>
-      {/*Backdrop i overlay modals */}
+      {isLoading && <LoadingModal />}
+      {infoData && (
+        <InfoModal
+          title={infoData.title}
+          message={infoData.message}
+          onConfirm={
+            infoData.message === "Error"
+              ? hideErrorModalHandler
+              : hideSuccessModalHandler
+          }
+        />
+      )}
       <Card className={classes.register}>
         <form onSubmit={submitHandler}>
           <Input
@@ -218,7 +241,12 @@ const RegisterForm = () => {
             onBlur={lastNameBlurHandler}
             onChange={lastNameChangeHandler}
           />
-          {/*Select komponenta za UserType */}
+          <Select
+            ref={userTypeRef}
+            id="userType"
+            label="User type: "
+            items={USER_TYPES}
+          />
           <Button type="submit" disabled={!isFormValid}>
             Submit
           </Button>

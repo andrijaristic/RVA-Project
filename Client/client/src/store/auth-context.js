@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useHttp from "../hooks/use-http";
 
 const AuthContext = React.createContext({
   token: "",
@@ -20,6 +21,7 @@ const retrieveStoredData = () => {
 };
 
 export const AuthContextProvider = (props) => {
+  const { sendRequest } = useHttp();
   const storedData = retrieveStoredData();
   const initToken = storedData.token;
   let initUser;
@@ -33,10 +35,11 @@ export const AuthContextProvider = (props) => {
 
   const isUserLoggedIn = token !== null && token !== undefined;
 
-  const loginHandler = (data) => {
+  const loginHandler = async (data) => {
     setToken(data.token);
     localStorage.setItem("token", data.token);
 
+    console.log(data.id);
     const loggedInUser = {
       id: data.id,
       name: data.name,
@@ -44,8 +47,48 @@ export const AuthContextProvider = (props) => {
       userType: data.userType,
     };
 
-    setUser(loggedInUser);
-    localStorage.setItem("user", JSON.stringify(loggedInUser));
+    if (data.userType !== 0) {
+      const requestConfigId = {
+        url: "https://localhost:44344/api/Students/get-id",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${data.token}`,
+        },
+      };
+
+      const studentInfo = await sendRequest(requestConfigId);
+      if (studentInfo.hasError) {
+        return;
+      }
+      const requestConfigExams = {
+        url: `https://localhost:44344/api/StudentResults/get-exams/${studentInfo.id}`,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+      const examsData = await sendRequest(requestConfigExams);
+      if (examsData.hasError) {
+        return;
+      }
+      console.log(examsData);
+
+      const exams = examsData.map((item) => ({
+        id: item.examId,
+        date: item.exam.examDate,
+      }));
+
+      const detailedLoggedInUser = {
+        ...loggedInUser,
+        exams: exams,
+      };
+
+      setUser(detailedLoggedInUser);
+      localStorage.setItem("user", JSON.stringify(detailedLoggedInUser));
+    } else {
+      setUser(loggedInUser);
+      localStorage.setItem("user", JSON.stringify(loggedInUser));
+    }
   };
 
   const logoutHandler = () => {

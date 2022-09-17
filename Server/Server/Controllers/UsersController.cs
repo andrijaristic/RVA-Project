@@ -22,7 +22,7 @@ namespace Server.Controllers
         {
             try
             {
-                AuthenticatedDTO authDTO = await _userService.Login(loginDTO);
+                AuthDTO authDTO = await _userService.Login(loginDTO);
                 return Ok(authDTO);
             } catch (Exception e)
             {
@@ -36,7 +36,6 @@ namespace Server.Controllers
             try
             {
                 User user = await _userService.RegisterNewUser(registerDTO);
-                Console.WriteLine(User.Claims.ToString());
                 return Ok(user); 
             } catch (Exception e)
             {

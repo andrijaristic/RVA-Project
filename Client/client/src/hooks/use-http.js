@@ -17,6 +17,7 @@ const useHttp = () => {
       data = {
         ...data,
         hasError: true,
+        title: data.title,
         errorMessage: data.message ? data.message : "Server error.",
       };
     }

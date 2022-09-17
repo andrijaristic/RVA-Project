@@ -9,6 +9,7 @@ namespace Server.Mapping
         public StudentResultMappingProfile()
         {
             CreateMap<StudentResult, DisplayStudentResultDTO>().ReverseMap();
+            CreateMap<StudentResult, StudentExamsDTO>().ReverseMap();
         }
     }
 }

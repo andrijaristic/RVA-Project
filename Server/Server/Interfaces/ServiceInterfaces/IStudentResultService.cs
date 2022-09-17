@@ -8,5 +8,6 @@ namespace Server.Interfaces.ServiceInterfaces
         Task<DisplayStudentDTO> AddStudentToExam(AddStudentResultDTO addStudentResultDTO);
         Task<string> RemoveStudentFromExam(AddStudentResultDTO addStudentResultDTO);
         Task<List<DisplayStudentResultDTO>> GetAllStudentsForExam(int id);
+        Task<List<StudentExamsDTO>> GetExamsForStudent(int id);
     }
 }

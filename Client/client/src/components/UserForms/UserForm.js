@@ -4,14 +4,19 @@ import useHttp from "../../hooks/use-http";
 
 import classes from "./UserForm.module.css";
 
+import Select from "../UI/Input/Select";
+
 import Card from "../UI/Card/Card";
 import Input from "../UI/Input/Input";
 import Button from "../UI/Button/Button";
+import LoadingModal from "../UI/Modals/LoadingModal";
+import InfoModal from "../UI/Modals/InfoModal";
 
 const UserForm = (props) => {
   const history = useHistory();
   const firstInputRef = useRef();
   const secondInputRef = useRef();
+
   const { isLoading, sendRequest } = useHttp();
   const [dataError, setDataError] = useState(null);
 
@@ -39,6 +44,10 @@ const UserForm = (props) => {
     setIsSecondInputTouched(true);
   };
 
+  const hideModalHandler = () => {
+    setDataError(null);
+  };
+
   const submitHandler = async (event) => {
     event.preventDefault();
 
@@ -50,7 +59,6 @@ const UserForm = (props) => {
       }),
     };
 
-    console.log(requestConfig.body);
     const data = await sendRequest(requestConfig); // fetch(url, {}) from useHttp();
     if (data.hasError) {
       setDataError({
@@ -67,7 +75,14 @@ const UserForm = (props) => {
 
   return (
     <React.Fragment>
-      {/*Backdrop i overlay modals */}
+      {isLoading && <LoadingModal />}
+      {dataError && (
+        <InfoModal
+          title={dataError.title}
+          message={dataError.message}
+          onConfirm={hideModalHandler}
+        />
+      )}
       <Card className={classes.login}>
         <form onSubmit={submitHandler}>
           <Input
