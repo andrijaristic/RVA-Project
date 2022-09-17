@@ -103,6 +103,8 @@ builder.Services.AddScoped<ITokenMakerFactory, TokenMakerFactory>();
 
 #region Validation
 builder.Services.AddScoped<IValidation<User>, UserValidation>();
+builder.Services.AddScoped<IValidation<Subject>, SubjectValidation>();
+builder.Services.AddScoped<IValidation<Exam>, ExamValidation>();
 #endregion
 
 #region DataInitializers

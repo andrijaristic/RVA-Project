@@ -2,6 +2,7 @@
 using Server.Dto.SubjectDto;
 using Server.Interfaces.ServiceInterfaces;
 using Server.Interfaces.UnitOfWorkInterfaces;
+using Server.Interfaces.ValidationInterfaces;
 using Server.Models;
 
 namespace Server.Services
@@ -10,11 +11,13 @@ namespace Server.Services
     {
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IValidation<Subject> _subjectValidation;
 
-        public SubjectService(IUnitOfWork unitOfWork, IMapper mapper)
+        public SubjectService(IUnitOfWork unitOfWork, IMapper mapper, IValidation<Subject> subjectValidation)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _subjectValidation = subjectValidation;
         }
 
         public async Task<List<DetailedSubjectDTO>> GetAllSubjectsComplete()
@@ -31,6 +34,12 @@ namespace Server.Services
         public async Task<DisplaySubjectDTO> CreateSubject(NewSubjectDTO newSubjectDTO)
         {
             Subject subject = _mapper.Map<Subject>(newSubjectDTO);
+
+            ValidationResult result = _subjectValidation.Validate(subject);
+            if (!result.isValid)
+            {
+                throw new Exception(result.Message);
+            }
 
             await _unitOfWork.Subjects.AddAsync(subject);
             await _unitOfWork.SaveAsync();

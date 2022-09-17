@@ -28,10 +28,10 @@ namespace Server.Services
                 throw new Exception($"Exam with ID [{addStudentResultDTO.ExamId}] doesn't exist.");
             }
 
-            //if (exam.ExamDate.AddDays(3) > DateTime.Now)
-            //{
-            //    throw new Exception($"Past exam application date.");
-            //}
+            if (exam.ExamDate.ToLocalTime().AddDays(3) > DateTime.Now.ToLocalTime())
+            {
+                throw new Exception($"Past exam application date.");
+            }
 
             Student student =  await _unitOfWork.Students.GetStudentAsync(addStudentResultDTO.StudentId);
 

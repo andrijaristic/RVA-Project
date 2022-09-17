@@ -14,23 +14,29 @@ namespace Server.Services
     {
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
-
-        public ExamService(IUnitOfWork unitOfWork, IMapper mapper)
+        private readonly IValidation<Exam> _examValidation;
+        
+        public ExamService(IUnitOfWork unitOfWork, IMapper mapper, IValidation<Exam> examValidation)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _examValidation = examValidation;
         }
 
         public async Task<DisplayExamDTO> CreateExam(NewExamDTO newExamDTO)
         {
-            // Validacija
-            //
+            Exam exam = _mapper.Map<Exam>(newExamDTO);
+            ValidationResult result = _examValidation.Validate(exam);
+            if (!result.isValid)
+            {
+                throw new Exception(result.Message);
+            }
+
             Subject subject = await _unitOfWork.Subjects.GetSubjectAsync(newExamDTO.SubjectId);
             if (subject == null)
             {
                 throw new Exception("Subject doesn't exist.");
             }
-            Exam exam = _mapper.Map<Exam>(newExamDTO);
             exam.Subject = subject;
 
             await _unitOfWork.Exams.AddAsync(exam);
