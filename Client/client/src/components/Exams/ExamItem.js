@@ -9,36 +9,39 @@ const ExamItem = (props) => {
     props.onView(props.id);
   };
 
-  const dummyHandler = () => {
-    console.log(`Hi :) => [${props.id}]`);
-  };
-
-  // date = true -> proslo " dugme: rezultat "
-  let clickHandlerContent = dummyHandler;
-  let buttonContent = "";
-  //<Button onClick={clickHandlerContent}>{buttonContent}</Button>
-  if (props.registered && props.date) {
-    // Registrovan i prosao datum prijave.
-    buttonContent = <Button onClick={clickHandlerContent}>View Results</Button>;
-    clickHandlerContent = viewHandler;
-  } else if (props.registered && !props.date) {
-    // Registrovan i nije prosao datum prijave.
-    buttonContent = <Button onClick={clickHandlerContent}>Remove</Button>;
-    clickHandlerContent = clickHandler;
-  } else if (!props.registered && !props.date) {
-    // Nije registrovan i nije prosao datum prijave.
-    buttonContent = <Button onClick={clickHandlerContent}>Apply</Button>;
-    clickHandlerContent = clickHandler;
-  }
-
   if (props.admin) {
     return (
       <li>
         <h2>{props.name}</h2>
         <p>{props.dateTime}</p>
-        <Button onClick={dummyHandler}>List Students</Button>
+        <Button
+          onClick={() => {
+            console.log("Hewwo");
+          }}
+        >
+          List Students
+        </Button>
       </li>
     );
+  }
+
+  // !Important
+  // TODO: Odvratno, popravi ko boga te molim.
+  let clickHandlerContent = null;
+  let buttonContent = null;
+
+  if (props.registered && props.datePassed) {
+    // Registrovan i prosao datum prijave.
+    clickHandlerContent = viewHandler;
+    buttonContent = <Button onClick={clickHandlerContent}>View Results</Button>;
+  } else if (props.registered && !props.datePassed) {
+    // Registrovan i nije prosao datum prijave.
+    clickHandlerContent = clickHandler;
+    buttonContent = <Button onClick={clickHandlerContent}>Remove</Button>;
+  } else if (!props.registered && !props.datePassed) {
+    // Nije registrovan i nije prosao datum prijave.
+    clickHandlerContent = clickHandler;
+    buttonContent = <Button onClick={clickHandlerContent}>Apply</Button>;
   }
 
   return (

@@ -73,10 +73,11 @@ const AddExam = () => {
       body: JSON.stringify({
         examName: examData.name,
         subjectId: subjectId,
-        examDate: new Date(),
+        examDate: examData.date,
       }),
     };
 
+    console.log(examData.date);
     const data = await sendRequest(requestConfig);
 
     setInfoData({

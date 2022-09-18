@@ -8,6 +8,8 @@ const AuthContext = React.createContext({
   onLogin: (data) => {},
   onLogout: () => {},
   onUpdate: (data) => {},
+  onApplication: (data) => {},
+  onWithdrawal: (data) => {},
 });
 
 const retrieveStoredData = () => {
@@ -80,6 +82,7 @@ export const AuthContextProvider = (props) => {
 
       const detailedLoggedInUser = {
         ...loggedInUser,
+        studentId: studentInfo.id,
         exams: exams,
       };
 
@@ -111,6 +114,31 @@ export const AuthContextProvider = (props) => {
     });
   };
 
+  const applicationHandler = (data) => {
+    setUser((prevUser) => {
+      const updateUser = {
+        ...prevUser,
+        exams: [...prevUser.exams, data],
+      };
+
+      localStorage.setItem("user", JSON.stringify(updateUser));
+      return updateUser;
+    });
+  };
+
+  const withdrawHandler = (data) => {
+    setUser((prevUser) => {
+      const exams = prevUser.exams.filter((x) => x.id !== data.id);
+      const updateUser = {
+        ...prevUser,
+        exams: exams,
+      };
+
+      localStorage.setItem("user", JSON.stringify(updateUser));
+      return updateUser;
+    });
+  };
+
   const contextValue = {
     token: token,
     user: user,
@@ -118,6 +146,8 @@ export const AuthContextProvider = (props) => {
     onLogin: loginHandler,
     onLogout: logoutHandler,
     onUpdate: updateHandler,
+    onApplication: applicationHandler,
+    onWithdrawal: withdrawHandler,
   };
 
   return (

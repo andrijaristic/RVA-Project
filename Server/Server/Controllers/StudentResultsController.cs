@@ -58,12 +58,13 @@ namespace Server.Controllers
         {
             try
             {
-                DisplayStudentDTO studentDTO = await _studentResultService.AddStudentToExam(addStudentResultDTO);
-                return Ok(studentDTO);
+                DisplayExamDTO examDTO = await _studentResultService.AddStudentToExam(addStudentResultDTO);
+                return Ok(examDTO);
             }
             catch (Exception e)
             {
-                return BadRequest(e.Message);
+                ErrorDTO error = new ErrorDTO() { Title = "Exam registration error", Message = e.Message };
+                return BadRequest(error);
             }
         }
 
@@ -73,13 +74,30 @@ namespace Server.Controllers
         {
             try
             {
-                string studentDTO = await _studentResultService.RemoveStudentFromExam(addStudentDTO);
-                return Ok(studentDTO);
+                DisplayExamDTO examDTO = await _studentResultService.RemoveStudentFromExam(addStudentDTO);
+                return Ok(examDTO);
             }
             catch (Exception e)
             {
-                return BadRequest(e.Message);
+                ErrorDTO error = new ErrorDTO() { Title = "Exam withdrawal error", Message = e.Message };
+                return BadRequest(error);
             }
+        }
+
+        [HttpGet("view")]
+        [Authorize(Policy = "SystemUser")]
+        public async Task<IActionResult> ViewStudentReuslt([FromQuery] AddStudentResultDTO studentResultDTO)
+        {
+            try
+            {
+                DisplayStudentResultDTO response = await _studentResultService.GetResultsForStudent(studentResultDTO);
+                return Ok(response);
+            } catch (Exception e)
+            {
+                ErrorDTO error = new ErrorDTO() { Title = "Result fetch error", Message = e.Message };
+                return BadRequest(error);
+            }
+
         }
     }
 }

@@ -26,14 +26,11 @@ const Exams = () => {
       const requestConfig = {
         url: "https://localhost:44344/api/Exams",
         headers: {
-          "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
       };
 
       const data = await sendRequest(requestConfig);
-
-      // ErrorDTO and SuccessDTO logic. (missing on back-end)
       if (data.hasError) {
         setErrorData({
           title: data.title,
@@ -77,7 +74,7 @@ const Exams = () => {
       },
       body: JSON.stringify({
         examId: examId,
-        studentId: user.id,
+        studentId: user.studentId,
       }),
     };
 
@@ -88,14 +85,52 @@ const Exams = () => {
         message: data.message,
       });
     }
+
+    authCtx.onApplication({ id: data.id, date: data.examDate });
   };
 
   const removeStudentFromExamHandler = async (examId) => {
-    console.log("You are now removing yourself from the exam.");
+    const requestConfig = {
+      url: "https://localhost:44344/api/StudentResults/remove",
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        examId: examId,
+        studentId: user.studentId,
+      }),
+    };
+
+    const data = await sendRequest(requestConfig);
+    if (data.hasError) {
+      setErrorData({
+        title: data.title,
+        message: data.message,
+      });
+    }
+
+    authCtx.onWithdrawal({ id: data.id, date: data.examDate });
   };
 
   const viewExamResultHandler = async (examId) => {
-    console.log(`You are now viewing EXAM:${examId} results.`);
+    const requestConfig = {
+      url: `https://localhost:44344/api/StudentResults/view?ExamId=${examId}&StudentId=${user.studentId}`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    const data = await sendRequest(requestConfig);
+    if (data.hasError) {
+      setErrorData({
+        title: data.title,
+        message: data.message,
+      });
+    }
+
+    console.log(`Exam result: ${data.result ? "Passed." : "Failed."}`);
   };
 
   return (

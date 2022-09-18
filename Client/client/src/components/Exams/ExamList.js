@@ -10,26 +10,30 @@ const ExamList = (props) => {
 
   const exams = props.items.map((item) => {
     const options = { day: "numeric", month: "long", year: "numeric" };
-    const date = new Date(item.examDate).toLocaleDateString("en-US", options);
-    const currentDate = new Date().toLocaleTimeString("en-US", options);
+    const formattedDate = new Date(item.examDate).toLocaleDateString(
+      "en-US",
+      options
+    );
 
-    console.log(registeredExams);
+    const currentDate = new Date().toLocaleDateString("en-US", options);
+    const datePassed = formattedDate <= currentDate;
 
-    const registeredToExam = registeredExams.some((x) => x.id === item.id);
-    const pastDate = registeredExams.some((x) => x.date < currentDate);
-
-    console.log(`${item.id} | ${registeredToExam}`);
+    let registeredToExam = null;
+    if (!props.admin) {
+      registeredToExam = registeredExams.some((x) => x.id === item.id);
+    }
 
     return (
       <ExamItem
         key={item.id}
         id={item.id}
         name={item.examName}
-        dateTime={date}
+        dateTime={formattedDate}
         onClick={registeredToExam ? props.onRemove : props.onAdd}
         onView={props.onView}
         registered={registeredToExam}
-        date={pastDate}
+        datePassed={datePassed}
+        // datePassedRegistered={datePassedForRegistered}
         admin={props.admin}
       />
     );

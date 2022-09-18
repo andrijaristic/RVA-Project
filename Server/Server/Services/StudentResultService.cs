@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
+using Server.Dto.ExamDto;
 using Server.Dto.StudentDto;
 using Server.Dto.StudentResultDto;
 using Server.Interfaces.ServiceInterfaces;
 using Server.Interfaces.UnitOfWorkInterfaces;
 using Server.Models;
+using System.Transactions;
 
 namespace Server.Services
 {
@@ -18,7 +20,7 @@ namespace Server.Services
             _unitOfWork = unitOfWork;   
         }
 
-        public async Task<DisplayStudentDTO> AddStudentToExam(AddStudentResultDTO addStudentResultDTO)
+        public async Task<DisplayExamDTO> AddStudentToExam(AddStudentResultDTO addStudentResultDTO)
         {
             //
             // Move to Exam validation file and only call validation function.
@@ -28,24 +30,29 @@ namespace Server.Services
                 throw new Exception($"Exam with ID [{addStudentResultDTO.ExamId}] doesn't exist.");
             }
 
-            if (exam.ExamDate.ToLocalTime().AddDays(3) > DateTime.Now.ToLocalTime())
+            if (exam.ExamDate.ToLocalTime().AddDays(3) < DateTime.Now.ToLocalTime())
             {
                 throw new Exception($"Past exam application date.");
             }
 
+            StudentResult studentResult = await _unitOfWork.StudentResults.GetStudentForExam(addStudentResultDTO.StudentId, addStudentResultDTO.ExamId);
+            if (studentResult != null)
+            {
+                throw new Exception($"Student:ID[{addStudentResultDTO.StudentId}] is already registered to Exam:ID[{addStudentResultDTO.ExamId}]");
+            }
+
+
             Student student =  await _unitOfWork.Students.GetStudentAsync(addStudentResultDTO.StudentId);
 
-            StudentResult studentResult = new StudentResult() { ExamId = exam.Id, StudentId = student.Id, Exam = exam, Student = student};
+            studentResult = new StudentResult() { ExamId = exam.Id, StudentId = student.Id, Exam = exam, Student = student};
             await _unitOfWork.StudentResults.AddAsync(studentResult);
             await _unitOfWork.SaveAsync();
 
-            return _mapper.Map<DisplayStudentDTO>(student);
+            return _mapper.Map<DisplayExamDTO>(exam);
         }
 
-        public async Task<string> RemoveStudentFromExam(AddStudentResultDTO addStudentResultDTO)
+        public async Task<DisplayExamDTO> RemoveStudentFromExam(AddStudentResultDTO addStudentResultDTO)
         {            
-            //
-            // Move to Exam validation file and only call validation function.
             Exam exam = await _unitOfWork.Exams.GetExamAsync(addStudentResultDTO.ExamId);
             if (exam == null)
             {
@@ -61,7 +68,7 @@ namespace Server.Services
             _unitOfWork.StudentResults.Remove(removedStudent);
             await _unitOfWork.SaveAsync();
 
-            return $"Successfully removed Student {addStudentResultDTO.StudentId} from {exam.ExamName}";
+            return _mapper.Map<DisplayExamDTO>(exam);
         }
 
 
@@ -87,5 +94,16 @@ namespace Server.Services
 
             return _mapper.Map<List<StudentExamsDTO>>(exams);
         }
+
+        public async Task<DisplayStudentResultDTO> GetResultsForStudent(AddStudentResultDTO dto)
+        {
+            StudentResult result = await _unitOfWork.StudentResults.GetStudentForExam(dto.StudentId, dto.ExamId);
+            if (result == null)
+            {
+                throw new Exception($"Student with ID [{dto.StudentId}] doesn't exist for Exam: ID[{dto.ExamId}].");
+            }
+
+            return _mapper.Map<DisplayStudentResultDTO>(result);
+         }
     }
 }

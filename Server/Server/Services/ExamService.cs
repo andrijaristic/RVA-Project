@@ -73,7 +73,7 @@ namespace Server.Services
             Exam exam = await _unitOfWork.Exams.GetExamComplete(id);
             if (exam == null)
             {
-                throw new Exception("Exception");
+                throw new Exception($"Exam with ID[{id}] doesn't exist.");
             }
 
             DetailedExamDTO dto = _mapper.Map<DetailedExamDTO>(exam);

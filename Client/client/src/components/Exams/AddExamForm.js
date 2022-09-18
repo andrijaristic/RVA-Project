@@ -29,6 +29,7 @@ const AddExamForm = (props) => {
     props.onSubmit({
       name: nameRef.current.value,
       subjectName: subjectRef.current.value,
+      date: dateTimeRef.current.value,
     });
   };
 

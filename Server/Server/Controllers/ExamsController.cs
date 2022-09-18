@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Server.Dto;
 using Server.Dto.ExamDto;
 using Server.Dto.StudentDto;
 using Server.Dto.StudentResultDto;
@@ -28,7 +29,8 @@ namespace Server.Controllers
                 return Ok(detailedExam);
             } catch (Exception e)
             {
-                return BadRequest(e.Message);
+                ErrorDTO error = new ErrorDTO() {Title = "Non-existant exam", Message = e.Message };
+                return BadRequest(error);
             }
         }
 
@@ -57,7 +59,8 @@ namespace Server.Controllers
                 return Ok(examDTO);
             } catch (Exception e)
             {
-                return BadRequest(e.Message);
+                ErrorDTO error = new ErrorDTO() { Title = "Error", Message = e.Message};
+                return BadRequest(error);
             }
         }
 
@@ -71,7 +74,8 @@ namespace Server.Controllers
                 return Ok("Successfully removed exam!");
             } catch (Exception e)
             {
-                return BadRequest(e.Message);
+                ErrorDTO error = new ErrorDTO() { Title = "Failed deletion", Message = e.Message };
+                return BadRequest(error);
             }
         }
 

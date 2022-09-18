@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Server.Dto;
 using Server.Dto.StudentDto;
 using Server.Dto.SubjectDto;
 using Server.Interfaces.ServiceInterfaces;
@@ -27,7 +28,8 @@ namespace Server.Controllers
                 return Ok(subjects);
             } catch (Exception e)
             {
-                return BadRequest(e.Message);
+                ErrorDTO error = new ErrorDTO() { Title = "Error", Message  = e.Message};
+                return BadRequest(error);
             }
         }
 
@@ -40,7 +42,8 @@ namespace Server.Controllers
                 return Ok(detailedSubject);
             } catch (Exception e)
             {
-                return BadRequest(e.Message);
+                ErrorDTO error = new ErrorDTO() { Title = "Non-existant subject", Message = e.Message};
+                return BadRequest(error);
             }
         }
 
@@ -54,7 +57,8 @@ namespace Server.Controllers
             }
             catch (Exception e) 
             {
-                return BadRequest(e.Message);
+                ErrorDTO error = new ErrorDTO() { Title = "Subject creation error", Message = e.Message };
+                return BadRequest(error);
             }
         }
 
@@ -67,7 +71,8 @@ namespace Server.Controllers
                 return Ok(responseText);
             } catch (Exception e)
             {
-                return BadRequest(e.Message);
+                ErrorDTO error = new ErrorDTO() { Title = "Subject deletion error", Message = e.Message };
+                return BadRequest(error);
             }
         }
     }
