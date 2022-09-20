@@ -33,5 +33,21 @@ namespace Server.Controllers
                 return BadRequest(err);
             }
         }
+
+        [HttpGet]
+        [Authorize(Roles = "admin")]
+        [Authorize(Policy = "SystemUser")]
+        public async Task<IActionResult> GetStudents()
+        {
+            try
+            {
+                List<DetailedStudentDTO> students = await _studentService.GetStudentsDetailed();
+                return Ok(students);
+            } catch (Exception e)
+            {
+                ErrorDTO error = new ErrorDTO() { Title = "Student fetch error", Message = e.Message };
+                return BadRequest(error);
+            }
+        }
     }
 }

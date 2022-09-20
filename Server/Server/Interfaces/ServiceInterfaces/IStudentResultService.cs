@@ -11,5 +11,6 @@ namespace Server.Interfaces.ServiceInterfaces
         Task<List<DisplayStudentResultDTO>> GetAllStudentsForExam(int id);
         Task<List<StudentExamsDTO>> GetExamsForStudent(int id);
         Task<DisplayStudentResultDTO> GetResultsForStudent(AddStudentResultDTO dto);
+        Task<DisplayStudentResultDTO> GradeStudentExam(GradeStudentDTO dto);
     }
 }

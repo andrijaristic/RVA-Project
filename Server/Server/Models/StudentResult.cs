@@ -8,5 +8,6 @@
         public int StudentId { get; set; }
         public Student Student { get; set; }
         public bool Result { get; set; } = false; // True => Passed | False => Failed
+        public bool isTouched { get; set; } = false;
     }
 }

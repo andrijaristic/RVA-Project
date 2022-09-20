@@ -27,5 +27,25 @@ namespace Server.Services
 
             return _mapper.Map<DisplayStudentDTO>(student);
         }
+
+        public async Task<List<DetailedStudentDTO>> GetStudentsDetailed()
+        {
+            List<Student> students = await _unitOfWork.Students.GetStudentsDetailed();
+            if (students == null)
+            {
+                throw new Exception("There are no registered students.");
+            }
+
+            foreach (var el in students)
+            {
+                List<StudentResult> exams = await _unitOfWork.StudentResults.GetExamsForStudent(el.Id);
+                foreach (var _el in exams)
+                {
+                    el.Exams.Add(_el.Exam);
+                }
+            }
+
+            return _mapper.Map<List<DetailedStudentDTO>>(students);
+        }
     }
 }

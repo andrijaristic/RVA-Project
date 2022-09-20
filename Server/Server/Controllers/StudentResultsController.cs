@@ -86,7 +86,7 @@ namespace Server.Controllers
 
         [HttpGet("view")]
         [Authorize(Policy = "SystemUser")]
-        public async Task<IActionResult> ViewStudentReuslt([FromQuery] AddStudentResultDTO studentResultDTO)
+        public async Task<IActionResult> ViewStudentResult([FromQuery] AddStudentResultDTO studentResultDTO)
         {
             try
             {
@@ -98,6 +98,22 @@ namespace Server.Controllers
                 return BadRequest(error);
             }
 
+        }
+
+        [HttpPut]
+        [Authorize(Roles = "admin")]
+        [Authorize(Policy = "SystemUser")]
+        public async Task<IActionResult> Put([FromBody] GradeStudentDTO gradeStudentDTO)
+        {
+            try
+            {
+                DisplayStudentResultDTO response = await _studentResultService.GradeStudentExam(gradeStudentDTO);
+                return Ok(response);
+            } catch (Exception e)
+            {
+                ErrorDTO error = new ErrorDTO() { Title = "Error while grading exam", Message = e.Message };
+                return BadRequest(error);
+            }
         }
     }
 }

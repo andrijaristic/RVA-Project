@@ -13,7 +13,7 @@ namespace Server.Repositories
 
         public async Task<List<StudentResult>> GetExamsForStudent(int studentId)
         {
-            List<StudentResult> examIds = await _dbContext.StudentResult.Where(x => x.StudentId == studentId).Include(x => x.Exam).Include(x => x.Student).ToListAsync();
+            List<StudentResult> examIds = await _dbContext.StudentResult.Where(x => x.StudentId == studentId).Include(x => x.Exam).ThenInclude(x => x.Subject).Include(x => x.Student).ToListAsync();
             return examIds;
         }
 

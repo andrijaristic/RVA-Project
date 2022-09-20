@@ -9,5 +9,6 @@ namespace Server.Interfaces.RepositoryInterfaces
         Task<Student> GetStudentAsync(int studentId);
         Task<Student> GetStudentForUser(string username);
         Task<List<Student>> GetStudentsForUser(string username);
+        Task<List<Student>> GetStudentsDetailed();
     }
 }

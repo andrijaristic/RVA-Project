@@ -11,6 +11,7 @@ namespace Server.Mapping
         {
             CreateMap<Student, RegisterDTO>().ReverseMap();
             CreateMap<Student, DisplayStudentDTO>().ReverseMap();
+            CreateMap<Student, DetailedStudentDTO>().ReverseMap();
         }
     }
 }

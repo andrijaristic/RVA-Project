@@ -1,4 +1,5 @@
 import Button from "../UI/Button/Button";
+import { Link } from "react-router-dom";
 
 const ExamItem = (props) => {
   const clickHandler = () => {
@@ -14,13 +15,7 @@ const ExamItem = (props) => {
       <li>
         <h2>{props.name}</h2>
         <p>{props.dateTime}</p>
-        <Button
-          onClick={() => {
-            console.log("Hewwo");
-          }}
-        >
-          List Students
-        </Button>
+        <Link to={`/exams/${props.id}`}>Detailed view</Link>
       </li>
     );
   }

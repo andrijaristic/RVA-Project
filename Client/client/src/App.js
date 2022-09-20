@@ -11,6 +11,7 @@ import SubjectsPage from "./pages/SubjectsPage";
 import ExamsPage from "./pages/ExamsPage";
 import AddSubjectPage from "./pages/AddSubjectPage";
 import AddExamPage from "./pages/AddExamPage";
+import DetailedExamPage from "./pages/DetailedExamPage";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -19,6 +20,9 @@ function App() {
     authCtx.user !== null &&
     authCtx.user !== undefined &&
     authCtx.user.userType === 0;
+
+  console.log(isAdmin);
+  console.log(authCtx.isLoggedIn);
 
   return (
     <React.Fragment>
@@ -36,19 +40,24 @@ function App() {
           {authCtx.isLoggedIn && <ProfilePage />}
           {!authCtx.isLoggedIn && <Redirect to="/" />}
         </Route>
-        <Route path="/subjects" exact>
+        <Route path="/subjects">
           <SubjectsPage />
+        </Route>
+        <Route path="/add-subject">
+          {isAdmin && <AddSubjectPage />}
+          {authCtx.isLoggedIn && !isAdmin && <Redirect to="/" />}
+          {!authCtx.isLoggedIn && <Redirect to="/" />}
         </Route>
         <Route path="/exams" exact>
           {authCtx.isLoggedIn && <ExamsPage />}
           {!authCtx.isLoggedIn && <Redirect to="/" />}
         </Route>
-        <Route path="/add-subject" exact>
-          {isAdmin && <AddSubjectPage />}
+        <Route path="/exams/:examId" exact>
+          {isAdmin && <DetailedExamPage />}
           {authCtx.isLoggedIn && !isAdmin && <Redirect to="/" />}
           {!authCtx.isLoggedIn && <Redirect to="/" />}
         </Route>
-        <Route path="/add-exam" exact>
+        <Route path="/add-exam">
           {isAdmin && <AddExamPage />}
           {authCtx.isLoggedIn && !isAdmin && <Redirect to="/" />}
           {!authCtx.isLoggedIn && <Redirect to="/" />}

@@ -30,7 +30,7 @@ namespace Server.Services
                 throw new Exception($"Exam with ID [{addStudentResultDTO.ExamId}] doesn't exist.");
             }
 
-            if (exam.ExamDate.ToLocalTime().AddDays(3) < DateTime.Now.ToLocalTime())
+            if (exam.ExamDate.ToLocalTime() <= DateTime.Now.ToLocalTime().AddDays(3))
             {
                 throw new Exception($"Past exam application date.");
             }
@@ -59,13 +59,18 @@ namespace Server.Services
                 throw new Exception($"Exam with ID [{addStudentResultDTO.ExamId}] doesn't exist.");
             }
 
-            StudentResult removedStudent = await _unitOfWork.StudentResults.GetStudentForExam(addStudentResultDTO.StudentId, addStudentResultDTO.ExamId);
-            if (removedStudent == null)
+            StudentResult student = await _unitOfWork.StudentResults.GetStudentForExam(addStudentResultDTO.StudentId, addStudentResultDTO.ExamId);
+            if (student == null)
             {
                 throw new Exception($"Student with ID [{addStudentResultDTO.StudentId}] doesn't exist for {exam.ExamName}.");
             }
 
-            _unitOfWork.StudentResults.Remove(removedStudent);
+            if (student.isTouched)
+            {
+                throw new Exception($"Student with ID [{addStudentResultDTO.StudentId}] has already been graded for {exam.ExamName}.");
+            }
+
+            _unitOfWork.StudentResults.Remove(student);
             await _unitOfWork.SaveAsync();
 
             return _mapper.Map<DisplayExamDTO>(exam);
@@ -105,5 +110,38 @@ namespace Server.Services
 
             return _mapper.Map<DisplayStudentResultDTO>(result);
          }
+
+        public async Task<DisplayStudentResultDTO> GradeStudentExam(GradeStudentDTO dto)
+        {
+            StudentResult result = await _unitOfWork.StudentResults.GetStudentForExam(dto.StudentId, dto.ExamId);
+            if (result == null)
+            {
+                throw new Exception($"Student with ID [{dto.StudentId}] doesn't exist for Exam: ID[{dto.ExamId}].");
+            }
+
+            Exam exam = await _unitOfWork.Exams.GetExamAsync(dto.ExamId);
+            if (exam == null)
+            {
+                throw new Exception($"Exam ID[{dto.ExamId}] doesn't exist.");
+            }
+
+            if (exam.ExamDate.ToLocalTime() > DateTime.Now.ToLocalTime())
+            {
+                result.isTouched = true;
+                throw new Exception($"Exam has not started. Cannot be graded.");
+            }
+
+            if (result.isTouched == true)
+            {
+                throw new Exception($"Student with ID [{dto.StudentId}] was already graded for Exam: ID[{dto.ExamId}].");
+            }
+
+            result.Result = dto.Result;
+            result.isTouched = true;
+
+            await _unitOfWork.SaveAsync();
+
+            return _mapper.Map<DisplayStudentResultDTO>(result);
+        }
     }
 }

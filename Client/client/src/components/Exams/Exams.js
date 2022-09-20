@@ -19,7 +19,7 @@ const Exams = () => {
   const { isLoading, sendRequest } = useHttp();
 
   const [exams, setExams] = useState(null);
-  const [errorData, setErrorData] = useState(null);
+  const [infoData, setInfoData] = useState(null);
 
   useEffect(() => {
     const getExams = async () => {
@@ -32,7 +32,7 @@ const Exams = () => {
 
       const data = await sendRequest(requestConfig);
       if (data.hasError) {
-        setErrorData({
+        setInfoData({
           title: data.title,
           message: data.errorMessage,
         });
@@ -60,8 +60,8 @@ const Exams = () => {
   }, []);
 
   const hideModalHandler = (props) => {
-    setErrorData(null);
-    history.replace("/");
+    setInfoData(null);
+    history.replace("/exams");
   };
 
   const addStudentToExamHandler = async (examId) => {
@@ -80,7 +80,7 @@ const Exams = () => {
 
     const data = await sendRequest(requestConfig);
     if (data.hasError) {
-      setErrorData({
+      setInfoData({
         title: data.title,
         message: data.message,
       });
@@ -105,7 +105,7 @@ const Exams = () => {
 
     const data = await sendRequest(requestConfig);
     if (data.hasError) {
-      setErrorData({
+      setInfoData({
         title: data.title,
         message: data.message,
       });
@@ -124,22 +124,26 @@ const Exams = () => {
 
     const data = await sendRequest(requestConfig);
     if (data.hasError) {
-      setErrorData({
+      setInfoData({
         title: data.title,
         message: data.message,
       });
     }
 
     console.log(`Exam result: ${data.result ? "Passed." : "Failed."}`);
+    setInfoData({
+      title: "EXAM RESULTS",
+      message: data.result ? "Passed." : "Failed.",
+    });
   };
 
   return (
     <React.Fragment>
       {isLoading && isInit && <LoadingModal />}
-      {errorData && (
+      {infoData && (
         <InfoModal
-          title={errorData.title}
-          message={errorData.message}
+          title={infoData.title}
+          message={infoData.message}
           onConfirm={hideModalHandler}
         />
       )}

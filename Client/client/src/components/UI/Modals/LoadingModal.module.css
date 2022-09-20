@@ -1,18 +1,18 @@
 .spinner {
   display: inline-block;
-  width: 80px;
-  height: 80px;
+  width: 140px;
+  height: 170px;
 }
 
 .spinner:after {
   content: " ";
   display: block;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
+  width: 124px;
+  height: 124px;
+  margin: 18px;
   border-radius: 50%;
-  border: 6px solid teal;
-  border-color: teal transparent teal transparent;
+  border: 8px solid rgb(0, 0, 0);
+  border-color: rgb(96, 123, 243) transparent rgb(96, 123, 243) transparent;
   animation: spinner 1.2s linear infinite;
 }
 
@@ -28,12 +28,13 @@
 
 .modal {
   position: fixed;
-  top: 30vh;
-  left: 10%;
-  width: 80%;
+  top: 20vh;
+  left: 40%;
+  width: 14%;
   z-index: 100;
   overflow: hidden;
-  background: white;
+  border-radius: 20%;
+  background: rgba(0, 0, 0, 0.562);
 }
 
 @keyframes spinner {

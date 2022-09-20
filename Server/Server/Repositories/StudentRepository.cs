@@ -31,6 +31,12 @@ namespace Server.Repositories
             return student;
         }
 
+        public async Task<List<Student>> GetStudentsDetailed()
+        {
+            List<Student> students = await _dbContext.Students.ToListAsync();
+            return students;
+        }
+
         public async Task<List<Student>> GetStudentsForUser(string username)
         {
             List<Student> students = await _dbContext.Students.Where(s => s.UserUsername == username).ToListAsync();

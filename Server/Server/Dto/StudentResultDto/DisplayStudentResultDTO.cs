@@ -8,5 +8,6 @@ namespace Server.Dto.StudentResultDto
         public int Id { get; set; }
         public DisplayStudentDTO Student { get; set; }
         public bool Result { get; set; }
+        public bool isTouched { get; set; }
     }
 }
