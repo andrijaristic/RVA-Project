@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Server.Dto;
 using Server.Dto.StudentDto;
+using Server.Dto.StudentResultDto;
+using Server.Interfaces.Logger;
 using Server.Interfaces.ServiceInterfaces;
 using Server.Services;
 
@@ -13,9 +15,11 @@ namespace Server.Controllers
     public class StudentsController : ControllerBase
     {
         private readonly IStudentService _studentService;
-        public StudentsController(IStudentService studentService)
+        private readonly ILogging _logger;
+        public StudentsController(IStudentService studentService, ILogging logger)
         {
             _studentService = studentService;
+            _logger = logger;
         }
         
         [HttpGet("get-id")]
@@ -24,11 +28,14 @@ namespace Server.Controllers
         {
             try
             {
+                _logger.LogMessage($"{User.Identity.Name}: Getting ID for corresponding student", Enums.ELogType.INFO);
+
                 string username = User.Identity.Name;
                 DisplayStudentDTO student = await _studentService.GetStudentId(username);
                 return Ok(student);
             } catch (Exception e)
             {
+                _logger.LogMessage($"{User.Identity.Name}: {e.Message}", Enums.ELogType.ERROR);
                 ErrorDTO err = new ErrorDTO() {Title =  "Error", Message = e.Message};
                 return BadRequest(err);
             }
@@ -41,10 +48,12 @@ namespace Server.Controllers
         {
             try
             {
+                _logger.LogMessage($"{User.Identity.Name}: Getting all registered students", Enums.ELogType.INFO);
                 List<DetailedStudentDTO> students = await _studentService.GetStudentsDetailed();
                 return Ok(students);
             } catch (Exception e)
             {
+                _logger.LogMessage($"{User.Identity.Name}: {e.Message}", Enums.ELogType.ERROR);
                 ErrorDTO error = new ErrorDTO() { Title = "Student fetch error", Message = e.Message };
                 return BadRequest(error);
             }

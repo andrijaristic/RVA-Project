@@ -5,6 +5,7 @@ using Server.Dto;
 using Server.Dto.ExamDto;
 using Server.Dto.StudentDto;
 using Server.Dto.StudentResultDto;
+using Server.Interfaces.Logger;
 using Server.Interfaces.ServiceInterfaces;
 
 namespace Server.Controllers
@@ -14,9 +15,11 @@ namespace Server.Controllers
     public class ExamsController : ControllerBase
     {
         private readonly IExamService _examService;
-        public ExamsController(IExamService examService)
+        private readonly ILogging _logger;
+        public ExamsController(IExamService examService, ILogging logger)
         {
             _examService = examService;
+            _logger = logger;
         }
 
         [HttpGet("{id}")]
@@ -25,10 +28,12 @@ namespace Server.Controllers
         {
             try
             {
+                _logger.LogMessage($"{User.Identity.Name}: Getting detailed exam with ID {id}", Enums.ELogType.INFO);
                 DetailedExamDTO detailedExam = await _examService.GetById(id);
                 return Ok(detailedExam);
             } catch (Exception e)
             {
+                _logger.LogMessage($"{User.Identity.Name}: {e.Message}", Enums.ELogType.ERROR);
                 ErrorDTO error = new ErrorDTO() {Title = "Non-existant exam", Message = e.Message };
                 return BadRequest(error);
             }
@@ -40,11 +45,13 @@ namespace Server.Controllers
         {
             try
             {
+                _logger.LogMessage($"{User.Identity.Name}: Getting all exams", Enums.ELogType.INFO);
                 List<DetailedExamDTO> exams = await _examService.GetAllExams();
                 return Ok(exams);
             }
             catch (Exception e)
             {
+                _logger.LogMessage($"{User.Identity.Name}: {e.Message}", Enums.ELogType.ERROR);
                 return BadRequest(e.Message);
             }
         }
@@ -55,10 +62,12 @@ namespace Server.Controllers
         {
             try
             {
+                _logger.LogMessage($"{User.Identity.Name}: Creating new exam", Enums.ELogType.INFO);
                 DisplayExamDTO examDTO = await _examService.CreateExam(newExamDTO);
                 return Ok(examDTO);
             } catch (Exception e)
             {
+                _logger.LogMessage($"{User.Identity.Name}: {e.Message}", Enums.ELogType.ERROR);
                 ErrorDTO error = new ErrorDTO() { Title = "Error", Message = e.Message};
                 return BadRequest(error);
             }
@@ -70,10 +79,12 @@ namespace Server.Controllers
         {
             try
             {
+                _logger.LogMessage($"{User.Identity.Name}: Deleteing exam with ID {id}", Enums.ELogType.INFO);
                 await _examService.DeleteExam(id);
                 return Ok("Successfully removed exam!");
             } catch (Exception e)
             {
+                _logger.LogMessage($"{User.Identity.Name}: {e.Message}", Enums.ELogType.ERROR);
                 ErrorDTO error = new ErrorDTO() { Title = "Failed deletion", Message = e.Message };
                 return BadRequest(error);
             }
