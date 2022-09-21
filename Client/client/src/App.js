@@ -12,6 +12,7 @@ import ExamsPage from "./pages/ExamsPage";
 import AddSubjectPage from "./pages/AddSubjectPage";
 import AddExamPage from "./pages/AddExamPage";
 import DetailedExamPage from "./pages/DetailedExamPage";
+import StudentsPage from "./pages/StudentsPage";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -33,8 +34,14 @@ function App() {
           {authCtx.isLoggedIn && <Redirect to="/" />}
         </Route>
         <Route path="/register">
-          {!authCtx.isLoggedIn && <RegisterPage />}
-          {authCtx.isLoggedIn && <Redirect to="/" />}
+          {isAdmin && <RegisterPage />}
+          {authCtx.isLoggedIn && !isAdmin && <Redirect to="/" />}
+          {!authCtx.isLoggedIn && <Redirect to="/login" />}
+        </Route>
+        <Route path="/students">
+          {isAdmin && <StudentsPage />}
+          {authCtx.isLoggedIn && !isAdmin && <Redirect to="/" />}
+          {!authCtx.isLoggedIn && <Redirect to="/login" />}
         </Route>
         <Route path="/edit-profile">
           {authCtx.isLoggedIn && <ProfilePage />}
@@ -46,21 +53,21 @@ function App() {
         <Route path="/add-subject">
           {isAdmin && <AddSubjectPage />}
           {authCtx.isLoggedIn && !isAdmin && <Redirect to="/" />}
-          {!authCtx.isLoggedIn && <Redirect to="/" />}
+          {!authCtx.isLoggedIn && <Redirect to="/login" />}
         </Route>
         <Route path="/exams" exact>
           {authCtx.isLoggedIn && <ExamsPage />}
-          {!authCtx.isLoggedIn && <Redirect to="/" />}
+          {!authCtx.isLoggedIn && <Redirect to="/login" />}
         </Route>
         <Route path="/exams/:examId" exact>
           {isAdmin && <DetailedExamPage />}
           {authCtx.isLoggedIn && !isAdmin && <Redirect to="/" />}
-          {!authCtx.isLoggedIn && <Redirect to="/" />}
+          {!authCtx.isLoggedIn && <Redirect to="/login" />}
         </Route>
         <Route path="/add-exam">
           {isAdmin && <AddExamPage />}
           {authCtx.isLoggedIn && !isAdmin && <Redirect to="/" />}
-          {!authCtx.isLoggedIn && <Redirect to="/" />}
+          {!authCtx.isLoggedIn && <Redirect to="/login" />}
         </Route>
         <Route path="/" exact>
           <HomePage />

@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import classes from "./Navigation.module.css";
-
 import { NavLink } from "react-router-dom";
 
+import classes from "./Navigation.module.css";
 import AuthContext from "../../store/auth-context";
+import Button from "../UI/Button/Button";
 
 const Navigation = () => {
   const authCtx = useContext(AuthContext);
@@ -11,6 +11,10 @@ const Navigation = () => {
     authCtx.user !== null &&
     authCtx.user !== undefined &&
     authCtx.user.userType === 0;
+
+  const logoutHandler = () => {
+    authCtx.onLogout();
+  };
 
   return (
     <nav className={classes.nav}>
@@ -28,7 +32,7 @@ const Navigation = () => {
           )}
         </li>
         <li>
-          {!authCtx.isLoggedIn && (
+          {isAdmin && (
             <NavLink activeClassName={classes.active} to="/register">
               Register
             </NavLink>
@@ -38,6 +42,13 @@ const Navigation = () => {
           {authCtx.isLoggedIn && (
             <NavLink activeClassName={classes.active} to="/edit-profile">
               Profile
+            </NavLink>
+          )}
+        </li>
+        <li>
+          {isAdmin && (
+            <NavLink activeClassName={classes.active} to="/students">
+              Students
             </NavLink>
           )}
         </li>
@@ -65,6 +76,11 @@ const Navigation = () => {
             <NavLink activeClassName={classes.active} to="/exams">
               Exams
             </NavLink>
+          )}
+        </li>
+        <li>
+          {authCtx.isLoggedIn && (
+            <Button onClick={logoutHandler}>Logout</Button>
           )}
         </li>
       </ul>

@@ -13,7 +13,7 @@
   border-radius: 50%;
   border: 8px solid rgb(0, 0, 0);
   border-color: rgb(96, 123, 243) transparent rgb(96, 123, 243) transparent;
-  animation: spinner 1.2s linear infinite;
+  animation: spinner 1.3s linear infinite;
 }
 
 .backdrop {

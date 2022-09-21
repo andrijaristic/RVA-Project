@@ -17,7 +17,6 @@ const Exams = () => {
   const isAdmin = user.userType === 0;
 
   const { isLoading, sendRequest } = useHttp();
-
   const [exams, setExams] = useState(null);
   const [infoData, setInfoData] = useState(null);
 
