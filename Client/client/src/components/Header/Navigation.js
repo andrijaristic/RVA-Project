@@ -24,65 +24,74 @@ const Navigation = () => {
             Home
           </NavLink>
         </li>
-        <li>
-          {!authCtx.isLoggedIn && (
+        {!authCtx.isLoggedIn && (
+          <li>
             <NavLink activeClassName={classes.active} to="/login">
               Login
             </NavLink>
-          )}
-        </li>
-        <li>
-          {isAdmin && (
+          </li>
+        )}
+        {authCtx.isLoggedIn && (
+          <li>
+            <NavLink activeClassName={classes.active} to="/logs">
+              Logs
+            </NavLink>
+          </li>
+        )}
+        {isAdmin && (
+          <li>
             <NavLink activeClassName={classes.active} to="/register">
               Register
             </NavLink>
-          )}
-        </li>
-        <li>
-          {authCtx.isLoggedIn && (
+          </li>
+        )}
+        {authCtx.isLoggedIn && (
+          <li>
             <NavLink activeClassName={classes.active} to="/edit-profile">
               Profile
             </NavLink>
-          )}
-        </li>
-        <li>
-          {isAdmin && (
+          </li>
+        )}
+        {isAdmin && (
+          <li>
             <NavLink activeClassName={classes.active} to="/students">
               Students
             </NavLink>
-          )}
-        </li>
-        <li>
-          {isAdmin && (
+          </li>
+        )}
+        {isAdmin && (
+          <li>
             <NavLink activeClassName={classes.active} to="/add-subject">
               Add Subject
             </NavLink>
-          )}
-        </li>
-        <li>
-          <NavLink activeClassName={classes.active} to="/subjects">
-            Subjects
-          </NavLink>
-        </li>
-        <li>
-          {isAdmin && (
+          </li>
+        )}
+        {authCtx.isLoggedIn && (
+          <li>
+            <NavLink activeClassName={classes.active} to="/subjects">
+              Subjects
+            </NavLink>
+          </li>
+        )}
+        {isAdmin && (
+          <li>
             <NavLink activeClassName={classes.active} to="/add-exam">
               Add Exam
             </NavLink>
-          )}
-        </li>
-        <li>
-          {authCtx.isLoggedIn && (
+          </li>
+        )}
+        {authCtx.isLoggedIn && (
+          <li>
             <NavLink activeClassName={classes.active} to="/exams">
               Exams
             </NavLink>
-          )}
-        </li>
-        <li>
-          {authCtx.isLoggedIn && (
+          </li>
+        )}
+        {authCtx.isLoggedIn && (
+          <li>
             <Button onClick={logoutHandler}>Logout</Button>
-          )}
-        </li>
+          </li>
+        )}
       </ul>
     </nav>
   );

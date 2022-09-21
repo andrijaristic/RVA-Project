@@ -13,6 +13,7 @@ import AddSubjectPage from "./pages/AddSubjectPage";
 import AddExamPage from "./pages/AddExamPage";
 import DetailedExamPage from "./pages/DetailedExamPage";
 import StudentsPage from "./pages/StudentsPage";
+import LogsPage from "./pages/LogsPage";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -32,6 +33,10 @@ function App() {
         <Route path="/login">
           {!authCtx.isLoggedIn && <LoginPage />}
           {authCtx.isLoggedIn && <Redirect to="/" />}
+        </Route>
+        <Route path="/logs">
+          {authCtx.isLoggedIn && <LogsPage />}
+          {!authCtx.isLoggedIn && <Redirect to="/" />}
         </Route>
         <Route path="/register">
           {isAdmin && <RegisterPage />}

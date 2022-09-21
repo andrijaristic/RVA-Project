@@ -29,9 +29,7 @@ const filterStudents = (students, filters) => {
 const Students = () => {
   const history = useHistory();
   const authCtx = useContext(AuthContext);
-  const { user, token } = authCtx;
-
-  const isAdmin = user.userType === 0;
+  const { token } = authCtx;
 
   const { isLoading, sendRequest } = useHttp();
   const [students, setStudents] = useState(null);

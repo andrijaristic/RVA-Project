@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Server.Dto;
+using Server.Dto.LogsDto;
 using Server.Dto.UserDto;
 using Server.Interfaces.ServiceInterfaces;
 using Server.Models;
@@ -56,6 +58,21 @@ namespace Server.Controllers
             } catch (Exception e)
             {
                 return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet("logs")]
+        [Authorize(Policy = "SystemUser")]
+        public async Task<IActionResult> GetLogs()
+        {
+            try
+            {
+                List<LogDTO> logs = await _userService.GetLogs(User.Identity.Name);
+                return Ok(logs);
+            } catch (Exception e)
+            {
+                ErrorDTO error = new ErrorDTO() { Title = "Log fetch error", Message = e.Message};
+                return BadRequest(error);
             }
         }
     }

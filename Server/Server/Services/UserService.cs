@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
+using Server.Dto.LogsDto;
 using Server.Dto.UserDto;
 using Server.Interfaces.ServiceInterfaces;
 using Server.Interfaces.TokenMakerInterfaces;
@@ -25,6 +27,36 @@ namespace Server.Services
             _tokenMakerFactory = tokenMakerFactory;
             _mapper = mapper;
             _userValidation = userValidation;
+        }
+
+        public async Task<List<LogDTO>> GetLogs(string username)
+        {
+            string filename = $"logs/logs{DateTime.Now.Year.ToString()}.txt";
+
+            using (FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.ReadWrite | FileShare.Delete))
+            {
+                string line;
+                StreamReader sr = new StreamReader(fs);
+                List<LogDTO> logs = new List<LogDTO>();
+
+                while ((line = await sr.ReadLineAsync()) != null)
+                {
+                    string logUsername = line.Substring(31).Split(' ')[1].Split(':')[0];
+                    if (!String.Equals(username, logUsername)) { continue; }
+
+                    LogDTO log = new LogDTO();
+                    log.Timestamp = line.Substring(0, 23);
+                    log.EventType = line.Substring(32, 3);
+                    log.Message = line.Substring(line.LastIndexOf(':') + 2);
+
+                    logs.Add(log);
+                }
+
+                sr.Close();
+                logs.Reverse();
+
+                return logs;
+            }
         }
 
         public async Task<AuthDTO> Login(LoginDTO loginDTO)

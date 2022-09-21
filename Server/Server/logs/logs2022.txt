@@ -1,1 +1,7 @@
 2022-09-21 18:35:46.726 +02:00 [INF] admin: Getting all available subjects
+2022-09-21 19:30:55.890 +02:00 [INF] admin: Getting all registered students
+2022-09-21 19:30:55.890 +02:00 [INF] admin: Getting all exams
+2022-09-21 19:31:00.217 +02:00 [INF] admin: Getting all available subjects
+2022-09-21 19:31:01.424 +02:00 [INF] admin: Getting all available subjects
+2022-09-21 19:31:03.620 +02:00 [INF] admin: Getting all exams
+2022-09-21 19:31:05.083 +02:00 [INF] admin: Listing all students registered for exam with ID 1
