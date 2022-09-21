@@ -8,6 +8,7 @@ const StudentsList = (props) => {
     return (
       <StudentItem
         key={item.id}
+        id={item.id}
         studentName={`${item.name} ${item.lastName}`}
         onClick={props.onClick}
       />

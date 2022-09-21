@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 import Button from "../UI/Button/Button";
 import classes from "./StudentItem.module.css";
@@ -9,7 +9,9 @@ const StudentItem = (props) => {
       <section>
         <h2 className={classes.upper}>{props.studentName}</h2>
       </section>
-      <Button onClick={props.onClick}>View exams</Button>
+      <Link to={`/students/${props.id}`}>
+        <Button>View exams</Button>
+      </Link>
     </div>
   );
 };

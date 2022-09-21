@@ -14,6 +14,7 @@ import AddExamPage from "./pages/AddExamPage";
 import DetailedExamPage from "./pages/DetailedExamPage";
 import StudentsPage from "./pages/StudentsPage";
 import LogsPage from "./pages/LogsPage";
+import StudentExamsPage from "./pages/StudentExamsPage";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -43,8 +44,13 @@ function App() {
           {authCtx.isLoggedIn && !isAdmin && <Redirect to="/" />}
           {!authCtx.isLoggedIn && <Redirect to="/login" />}
         </Route>
-        <Route path="/students">
+        <Route path="/students" exact>
           {isAdmin && <StudentsPage />}
+          {authCtx.isLoggedIn && !isAdmin && <Redirect to="/" />}
+          {!authCtx.isLoggedIn && <Redirect to="/login" />}
+        </Route>
+        <Route path="/students/:studentId" exact>
+          {isAdmin && <StudentExamsPage />}
           {authCtx.isLoggedIn && !isAdmin && <Redirect to="/" />}
           {!authCtx.isLoggedIn && <Redirect to="/login" />}
         </Route>
