@@ -10,6 +10,9 @@ namespace Server.Infrastructure.Configurations
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
+
+            builder.HasMany(x => x.Exams)
+                   .WithMany(x => x.Students);
         }
     }
 }
