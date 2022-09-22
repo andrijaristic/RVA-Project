@@ -8,6 +8,7 @@ namespace Server.Interfaces.RepositoryInterfaces
         Task<Exam> GetExamAsync(int examId);
         Task<Exam> GetExamComplete(int examId);
         Task<List<Exam>> GetAllExamsComplete();
+        Task<List<Exam>> GetExamsForSubject(int subjectId);
 
     }
 }

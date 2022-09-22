@@ -73,24 +73,39 @@ namespace Server.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("delete-exam/{id}")]
         [Authorize(Policy = "SystemUser")]
         public async Task<IActionResult> Delete(int id)
         {
             try
             {
-                _logger.LogMessage($"{User.Identity.Name}: Deleteing exam with ID {id}", Enums.ELogType.INFO);
-                await _examService.DeleteExam(id);
-                return Ok("Successfully removed exam!");
+                _logger.LogMessage($"{User.Identity.Name}: Deleting exam with ID {id}", Enums.ELogType.INFO);
+                SuccessDTO response = await _examService.DeleteExam(id);
+                return Ok(response);
             } catch (Exception e)
             {
                 _logger.LogMessage($"{User.Identity.Name}: {e.Message}", Enums.ELogType.ERROR);
-                ErrorDTO error = new ErrorDTO() { Title = "Failed deletion", Message = e.Message };
+                ErrorDTO error = new ErrorDTO() { Title = "Exam deletion error", Message = e.Message };
                 return BadRequest(error);
             }
         }
 
-
-
+        [HttpPut("update-exam")]
+        [Authorize(Roles = "admin")]
+        [Authorize(Policy = "SystemUser")]
+        public async Task<IActionResult> Put([FromBody]UpdateExamDTO dto)
+        {
+            try
+            {
+                _logger.LogMessage($"{User.Identity.Name}: Updating exam with ID {dto.Id}", Enums.ELogType.INFO);
+                SuccessDTO response = await _examService.UpdateExam(dto);
+                return Ok(response);
+            } catch (Exception e)
+            {
+                _logger.LogMessage($"{User.Identity.Name}: {e.Message}", Enums.ELogType.ERROR);
+                ErrorDTO error = new ErrorDTO() { Title = "Exam updating error", Message = e.Message };
+                return BadRequest(error);
+            }
+        }
     }
 }

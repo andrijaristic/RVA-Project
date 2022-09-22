@@ -34,5 +34,11 @@ namespace Server.Repositories
             List<Exam> exams = await _dbContext.Exams.Include(x => x.StudentResults).ToListAsync();
             return exams;
         }
+
+        public async Task<List<Exam>> GetExamsForSubject(int subjectId)
+        {
+            List<Exam> exams = await _dbContext.Exams.Include(x => x.SubjectId == subjectId).ToListAsync();
+            return exams;
+        }
     }
 }

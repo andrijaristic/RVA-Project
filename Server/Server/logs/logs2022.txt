@@ -120,3 +120,49 @@
 2022-09-21 23:29:52.175 +02:00 [INF] string: Removing student with ID 1 from exam with ID 12
 2022-09-21 23:29:53.496 +02:00 [INF] admin: Getting all registered students
 2022-09-21 23:29:53.496 +02:00 [INF] admin: Getting all exams
+2022-09-22 12:16:22.050 +02:00 [INF] admin: Deleting subject with ID 1
+2022-09-22 12:19:21.458 +02:00 [INF] string: Getting ID for corresponding student
+2022-09-22 12:19:21.476 +02:00 [INF] : Getting all exams for student with ID 1
+2022-09-22 12:19:23.652 +02:00 [INF] string: Getting all available subjects
+2022-09-22 12:19:24.942 +02:00 [INF] string: Getting all exams
+2022-09-22 12:19:30.117 +02:00 [INF] admin: Getting all available subjects
+2022-09-22 12:19:30.552 +02:00 [INF] admin: Getting all available subjects
+2022-09-22 12:19:31.473 +02:00 [INF] admin: Getting all exams
+2022-09-22 12:19:31.939 +02:00 [INF] admin: Getting all available subjects
+2022-09-22 12:19:34.401 +02:00 [INF] admin: Getting all available subjects
+2022-09-22 12:19:35.514 +02:00 [INF] admin: Getting all exams
+2022-09-22 12:19:35.515 +02:00 [INF] admin: Getting all registered students
+2022-09-22 12:19:37.376 +02:00 [INF] admin: Getting all exams for student with ID 1
+2022-09-22 12:19:38.970 +02:00 [INF] admin: Getting all registered students
+2022-09-22 12:19:38.972 +02:00 [INF] admin: Getting all exams
+2022-09-22 12:19:39.753 +02:00 [INF] admin: Getting all exams for student with ID 2
+2022-09-22 12:19:41.335 +02:00 [INF] admin: Getting all registered students
+2022-09-22 12:19:41.335 +02:00 [INF] admin: Getting all exams
+2022-09-22 12:19:42.008 +02:00 [INF] admin: Getting all exams for student with ID 4
+2022-09-22 12:19:42.891 +02:00 [INF] admin: Getting all registered students
+2022-09-22 12:19:42.891 +02:00 [INF] admin: Getting all exams
+2022-09-22 12:19:43.723 +02:00 [INF] admin: Getting all exams for student with ID 9
+2022-09-22 12:19:44.933 +02:00 [INF] admin: Getting all registered students
+2022-09-22 12:19:44.943 +02:00 [INF] admin: Getting all exams
+2022-09-22 12:23:07.947 +02:00 [INF] admin: Getting all available subjects
+2022-09-22 12:23:12.706 +02:00 [INF] admin: Updating subject with ID 5
+2022-09-22 12:23:17.851 +02:00 [INF] admin: Getting all available subjects
+2022-09-22 12:31:03.856 +02:00 [INF] admin: Getting all exams
+2022-09-22 12:31:03.857 +02:00 [INF] admin: Getting all registered students
+2022-09-22 12:31:05.126 +02:00 [INF] admin: Getting all available subjects
+2022-09-22 12:31:15.203 +02:00 [INF] admin: Getting all available subjects
+2022-09-22 12:31:15.425 +02:00 [INF] admin: Updating subject with ID 5
+2022-09-22 12:31:32.827 +02:00 [INF] admin: Getting all available subjects
+2022-09-22 12:31:43.194 +02:00 [INF] admin: Getting all available subjects
+2022-09-22 12:35:25.949 +02:00 [INF] admin: Getting all available subjects
+2022-09-22 12:35:35.963 +02:00 [INF] admin: Getting all available subjects
+2022-09-22 12:36:23.124 +02:00 [INF] admin: Deleteing exam with ID 10
+2022-09-22 12:36:23.495 +02:00 [ERR] admin: Exam with ID[10] doesn't exist.
+2022-09-22 12:36:29.356 +02:00 [INF] admin: Deleteing exam with ID 8
+2022-09-22 12:36:29.474 +02:00 [ERR] admin: Exam with ID[8] has registered students. Cannot be deleted.
+2022-09-22 13:26:10.013 +02:00 [INF] admin: Updating exam with ID 8
+2022-09-22 13:26:10.102 +02:00 [ERR] admin: Exam date is in the past.
+2022-09-22 13:26:52.208 +02:00 [INF] admin: Deleting exam with ID 8
+2022-09-22 13:26:52.254 +02:00 [ERR] admin: Exam is past date. Cannot be deleted.
+2022-09-22 13:27:01.065 +02:00 [INF] admin: Updating exam with ID 8
+2022-09-22 13:27:01.102 +02:00 [ERR] admin: Exam date is in the past.

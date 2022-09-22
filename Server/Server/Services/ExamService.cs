@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore.Internal;
+using Server.Dto;
 using Server.Dto.ExamDto;
 using Server.Dto.StudentResultDto;
 using Server.Dto.SubjectDto;
@@ -45,7 +47,7 @@ namespace Server.Services
             return _mapper.Map<DisplayExamDTO>(exam);
         }
 
-        public async Task DeleteExam(int id)
+        public async Task<SuccessDTO> DeleteExam(int id)
         {
             Exam exam = await _unitOfWork.Exams.GetExamAsync(id);
             if (exam == null)
@@ -53,8 +55,46 @@ namespace Server.Services
                 throw new Exception($"Exam with ID[{id}] doesn't exist.");
             }
 
+            if (exam.ExamDate.ToLocalTime() < DateTime.Now.ToLocalTime())
+            {
+                throw new Exception($"Exam is past date. Cannot be deleted.");
+            }
+
+            List<StudentResult> registeredStudents = await _unitOfWork.StudentResults.GetStudentsForExam(id);
+            if (registeredStudents != null)
+            {
+                throw new Exception($"Exam with ID[{id}] has registered students. Cannot be deleted.");
+            }
+
             _unitOfWork.Exams.Remove(exam);
             await _unitOfWork.SaveAsync();
+
+            SuccessDTO response = new SuccessDTO() { Title = "Successful exam deletion", Message = $"Exam with ID [{id}] has been successfully deleted!"};
+            return response;
+        }
+
+        public async Task<SuccessDTO> UpdateExam(UpdateExamDTO dto)
+        {
+            Exam exam = await _unitOfWork.Exams.GetExamAsync(dto.Id);
+            if (exam == null)
+            {
+                throw new Exception($"Exam with ID[{dto.Id}] doesn't exist.");
+            }
+
+            Exam updatedExam = _mapper.Map<Exam>(dto);
+            updatedExam.ExamDate = exam.ExamDate;
+
+            ValidationResult validation = _examValidation.Validate(updatedExam);
+            if (!validation.isValid)
+            {
+                throw new Exception(validation.Message);
+            }
+
+            exam.ExamName = dto.ExamName;
+            await _unitOfWork.SaveAsync();
+
+            SuccessDTO response = new SuccessDTO() { Title = "Successful exam update", Message = $"Exam with ID [{dto.Id}] has been successfully updated!" };
+            return response;
         }
 
         public async Task<List<DetailedExamDTO>> GetAllExams()
@@ -80,5 +120,7 @@ namespace Server.Services
 
             return dto;
         }
+
+
     }
 }

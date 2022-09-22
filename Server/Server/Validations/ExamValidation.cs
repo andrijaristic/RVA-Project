@@ -16,7 +16,7 @@ namespace Server.Validations
                 return result;
             }
 
-            if (entity.ExamDate <= DateTime.Now.ToLocalTime()) 
+            if (entity.ExamDate.ToLocalTime() < DateTime.Now.ToLocalTime()) 
             {
                 result.isValid = false;
                 result.Message = "Exam date is in the past.";

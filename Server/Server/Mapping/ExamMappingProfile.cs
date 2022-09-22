@@ -11,6 +11,7 @@ namespace Server.Mapping
             CreateMap<Exam, DetailedExamDTO>().ReverseMap();
             CreateMap<Exam, DisplayExamDTO>().ReverseMap();
             CreateMap<Exam, NewExamDTO>().ReverseMap();
+            CreateMap<Exam, UpdateExamDTO>().ReverseMap();
         }
     }
 }

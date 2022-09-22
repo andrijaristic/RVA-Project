@@ -74,19 +74,39 @@ namespace Server.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("delete-subject/{id}")]
+        [Authorize(Roles = "admin")]
         [Authorize(Policy = "SystemUser")]
         public async Task<IActionResult> Delete(int id)
         {
             try
             {
                 _logger.LogMessage($"{User.Identity.Name}: Deleting subject with ID {id}", Enums.ELogType.INFO);
-                string responseText = await _subjectService.DeleteSubject(id);
-                return Ok(responseText);
-            } catch (Exception e)
+                SuccessDTO response = await _subjectService.DeleteSubject(id);
+                return Ok(response);
+            }
+            catch (Exception e)
             {
                 _logger.LogMessage($"{User.Identity.Name}: {e.Message}", Enums.ELogType.ERROR);
                 ErrorDTO error = new ErrorDTO() { Title = "Subject deletion error", Message = e.Message };
+                return BadRequest(error);
+            }
+        }
+
+        [HttpPut("update-subject")]
+        [Authorize(Roles = "admin")]
+        [Authorize(Policy = "SystemUser")]
+        public async Task<IActionResult> Put([FromBody]SubjectUpdateDTO dto)
+        {
+            try
+            {
+                _logger.LogMessage($"{User.Identity.Name}: Updating subject with ID {dto.Id}", Enums.ELogType.INFO);
+                SuccessDTO response = await _subjectService.UpdateSubject(dto);
+                return Ok(response);
+            } catch (Exception e)
+            {
+                _logger.LogMessage($"{User.Identity.Name}: {e.Message}", Enums.ELogType.ERROR);
+                ErrorDTO error = new ErrorDTO() { Title = "Subject update error", Message = e.Message};
                 return BadRequest(error);
             }
         }

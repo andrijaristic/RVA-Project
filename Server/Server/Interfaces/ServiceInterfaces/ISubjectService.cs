@@ -1,4 +1,5 @@
-﻿using Server.Dto.SubjectDto;
+﻿using Server.Dto;
+using Server.Dto.SubjectDto;
 
 namespace Server.Interfaces.ServiceInterfaces
 {
@@ -7,6 +8,7 @@ namespace Server.Interfaces.ServiceInterfaces
         Task<List<DetailedSubjectDTO>> GetAllSubjectsComplete();
         Task<DetailedSubjectDTO> GetSubjectComplete(int id);
         Task<DisplaySubjectDTO> CreateSubject(NewSubjectDTO newSubjectDTO);
-        Task<string> DeleteSubject(int id);
+        Task<SuccessDTO> DeleteSubject(int id);
+        Task<SuccessDTO> UpdateSubject(SubjectUpdateDTO dto);
     }
 }
