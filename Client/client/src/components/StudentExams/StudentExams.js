@@ -75,6 +75,52 @@ const StudentExams = () => {
     history.replace("/students");
   };
 
+  const removeStudentFromExamHandler = async (examId) => {
+    const requestConfig = {
+      url: "https://localhost:44344/api/StudentResults/remove",
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        examId: examId,
+        studentId: studentId,
+      }),
+    };
+
+    const data = await sendRequest(requestConfig);
+    if (data.hasError) {
+      setInfoData({
+        title: data.title,
+        message: data.message,
+      });
+    }
+  };
+
+  const editExamHandler = async (updatedExam) => {
+    const requestConfig = {
+      url: `https://localhost:44344/api/Exams/update-exam`,
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        id: updatedExam.id,
+        examName: updatedExam.name,
+      }),
+    };
+
+    const data = await sendRequest(requestConfig);
+    if (data.hasError) {
+      setInfoData({
+        title: data.title,
+        message: data.message,
+      });
+    }
+  };
+
   return (
     <React.Fragment>
       {isLoading && isInit && <LoadingModal />}
@@ -90,7 +136,13 @@ const StudentExams = () => {
           <h2>The student is not registered to any exams.</h2>
         </section>
       )}
-      {exams !== null && <StudentExamList items={exams} />}
+      {exams !== null && (
+        <StudentExamList
+          items={exams}
+          onRemove={removeStudentFromExamHandler}
+          onEdit={editExamHandler}
+        />
+      )}
     </React.Fragment>
   );
 };

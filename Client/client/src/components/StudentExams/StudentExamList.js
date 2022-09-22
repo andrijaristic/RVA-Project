@@ -11,6 +11,8 @@ const StudentExamList = (props) => {
         name={item.name}
         subject={item.subject}
         date={item.date}
+        onRemove={props.onRemove}
+        onEdit={props.onEdit}
       />
     );
   });

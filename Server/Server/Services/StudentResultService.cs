@@ -24,7 +24,7 @@ namespace Server.Services
         {
             //
             // Move to Exam validation file and only call validation function.
-            Exam exam = await _unitOfWork.Exams.GetExamAsync(addStudentResultDTO.ExamId);
+            Exam exam = await _unitOfWork.Exams.GetExamComplete(addStudentResultDTO.ExamId);
             if (exam == null)
             {
                 throw new Exception($"Exam with ID [{addStudentResultDTO.ExamId}] doesn't exist.");
@@ -42,7 +42,8 @@ namespace Server.Services
             }
 
 
-            Student student =  await _unitOfWork.Students.GetStudentAsync(addStudentResultDTO.StudentId);
+            Student student =  await _unitOfWork.Students.GetStudentComplete(addStudentResultDTO.StudentId);
+            student.Exams.Add(exam);
 
             studentResult = new StudentResult() { ExamId = exam.Id, StudentId = student.Id, Exam = exam, Student = student};
             await _unitOfWork.StudentResults.AddAsync(studentResult);

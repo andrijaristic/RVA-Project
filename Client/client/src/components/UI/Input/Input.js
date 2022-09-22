@@ -6,7 +6,6 @@ const Input = React.forwardRef((props, ref) => {
   const inputClasses = `${classes.control} ${
     !props.isValid && props.isTouched ? classes.invalid : ""
   }`;
-
   return (
     <div className={inputClasses}>
       <label htmlFor={props.id}>{props.label}</label>
@@ -16,6 +15,7 @@ const Input = React.forwardRef((props, ref) => {
         type={props.type}
         onChange={props.onChange}
         onBlur={props.onBlur}
+        placeholder={props.name}
       />
       {!props.isValid && props.isTouched && (
         <p>
