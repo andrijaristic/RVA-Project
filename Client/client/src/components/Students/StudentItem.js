@@ -4,6 +4,10 @@ import Button from "../UI/Button/Button";
 import classes from "./StudentItem.module.css";
 
 const StudentItem = (props) => {
+  const clickHandler = () => {
+    props.onClick(props.id);
+  };
+
   return (
     <div>
       <section>
@@ -12,6 +16,7 @@ const StudentItem = (props) => {
       <Link to={`/students/${props.id}`}>
         <Button>View exams</Button>
       </Link>
+      <Button onClick={clickHandler}>Duplicate</Button>
     </div>
   );
 };

@@ -37,6 +37,7 @@ const LoginPage = () => {
     <UserForm
       requestConfig={requestConfig}
       dataHandler={authCtx.onLogin}
+      title="Login"
       firstInput={firstInput}
       secondInput={secondInput}
       onCreateBody={createBodyHandler}

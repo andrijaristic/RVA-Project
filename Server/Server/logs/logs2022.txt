@@ -177,3 +177,129 @@
 2022-09-22 14:51:41.202 +02:00 [INF] admin: Getting all exams
 2022-09-22 14:51:51.208 +02:00 [INF] admin: Getting all registered students
 2022-09-22 14:51:51.211 +02:00 [INF] admin: Getting all exams
+2022-09-22 17:48:21.761 +02:00 [INF] admin: Getting all exams
+2022-09-22 17:48:21.761 +02:00 [INF] admin: Getting all registered students
+2022-09-22 17:48:24.531 +02:00 [INF] admin: Getting all exams for student with ID 1
+2022-09-22 17:48:34.523 +02:00 [INF] admin: Getting all exams for student with ID 1
+2022-09-22 17:51:38.590 +02:00 [INF] admin: Duplicating student with ID [150]
+2022-09-22 17:51:38.724 +02:00 [ERR] admin: Student with ID [150] doesn't exist.
+2022-09-22 17:56:07.066 +02:00 [INF] admin: Getting all registered students
+2022-09-22 17:56:07.066 +02:00 [INF] admin: Getting all exams
+2022-09-22 17:56:17.059 +02:00 [INF] admin: Getting all registered students
+2022-09-22 17:56:17.062 +02:00 [INF] admin: Getting all exams
+2022-09-22 17:56:43.620 +02:00 [INF] admin: Getting all exams
+2022-09-22 17:56:43.620 +02:00 [INF] admin: Getting all registered students
+2022-09-22 17:56:53.635 +02:00 [INF] admin: Getting all registered students
+2022-09-22 17:56:53.637 +02:00 [INF] admin: Getting all exams
+2022-09-22 17:57:57.100 +02:00 [INF] admin: Getting all registered students
+2022-09-22 17:57:57.103 +02:00 [INF] admin: Getting all exams
+2022-09-22 17:58:02.199 +02:00 [INF] admin: Getting all registered students
+2022-09-22 17:58:02.202 +02:00 [INF] admin: Getting all exams
+2022-09-22 17:58:12.190 +02:00 [INF] admin: Getting all registered students
+2022-09-22 17:58:12.190 +02:00 [INF] admin: Getting all exams
+2022-09-22 17:58:38.208 +02:00 [INF] admin: Getting all registered students
+2022-09-22 17:58:38.208 +02:00 [INF] admin: Getting all exams
+2022-09-22 17:58:40.137 +02:00 [INF] admin: Getting all registered students
+2022-09-22 17:58:40.137 +02:00 [INF] admin: Getting all exams
+2022-09-22 17:58:45.223 +02:00 [INF] admin: Duplicating student with ID [1]
+2022-09-22 17:59:21.525 +02:00 [INF] admin: Getting all exams
+2022-09-22 17:59:21.525 +02:00 [INF] admin: Getting all registered students
+2022-09-22 17:59:32.202 +02:00 [INF] admin: Getting all exams
+2022-09-22 17:59:32.202 +02:00 [INF] admin: Getting all registered students
+2022-09-22 17:59:38.440 +02:00 [INF] admin: Duplicating student with ID [9]
+2022-09-22 17:59:54.753 +02:00 [INF] admin: Getting all exams
+2022-09-22 17:59:54.753 +02:00 [INF] admin: Getting all registered students
+2022-09-22 18:00:04.757 +02:00 [INF] admin: Getting all registered students
+2022-09-22 18:00:04.765 +02:00 [INF] admin: Getting all exams
+2022-09-22 18:00:06.811 +02:00 [INF] admin: Duplicating student with ID [13]
+2022-09-22 18:01:06.206 +02:00 [INF] admin: Getting all registered students
+2022-09-22 18:01:06.206 +02:00 [INF] admin: Getting all exams
+2022-09-22 18:01:11.151 +02:00 [INF] admin: Getting all registered students
+2022-09-22 18:01:11.152 +02:00 [INF] admin: Getting all exams
+2022-09-22 18:01:12.902 +02:00 [INF] admin: Duplicating student with ID [14]
+2022-09-22 18:01:16.227 +02:00 [INF] admin: Duplicating student with ID [13]
+2022-09-22 18:01:21.166 +02:00 [INF] admin: Getting all exams
+2022-09-22 18:01:21.166 +02:00 [INF] admin: Getting all registered students
+2022-09-22 18:03:14.118 +02:00 [INF] admin: Getting all exams
+2022-09-22 18:03:14.118 +02:00 [INF] admin: Getting all registered students
+2022-09-22 18:03:19.461 +02:00 [INF] admin: Getting all registered students
+2022-09-22 18:03:19.461 +02:00 [INF] admin: Getting all exams
+2022-09-22 18:03:21.204 +02:00 [INF] admin: Getting all registered students
+2022-09-22 18:03:21.204 +02:00 [INF] admin: Getting all exams
+2022-09-22 18:03:31.205 +02:00 [INF] admin: Getting all registered students
+2022-09-22 18:03:31.205 +02:00 [INF] admin: Getting all exams
+2022-09-22 18:05:52.242 +02:00 [INF] string: Getting ID for corresponding student
+2022-09-22 18:05:52.297 +02:00 [ERR] string: Sequence contains more than one element.
+2022-09-22 18:06:20.542 +02:00 [INF] string: Getting ID for corresponding student
+2022-09-22 18:06:20.594 +02:00 [ERR] string: Sequence contains more than one element.
+2022-09-22 18:06:48.253 +02:00 [INF] string: Getting ID for corresponding student
+2022-09-22 18:06:48.352 +02:00 [ERR] string: Sequence contains more than one element.
+2022-09-22 18:07:40.396 +02:00 [INF] string: Getting ID for corresponding student
+2022-09-22 18:07:40.452 +02:00 [ERR] string: Sequence contains more than one element.
+2022-09-22 18:08:23.866 +02:00 [INF] string: Getting ID for corresponding student
+2022-09-22 18:08:39.131 +02:00 [INF] string: Getting ID for corresponding student
+2022-09-22 18:08:42.803 +02:00 [INF] : Getting all exams for student with ID 1
+2022-09-22 18:08:51.197 +02:00 [INF] : Getting ID for corresponding student
+2022-09-22 18:08:51.243 +02:00 [ERR] : Student does not exist.
+2022-09-22 18:09:15.556 +02:00 [INF] : Getting ID for corresponding student
+2022-09-22 18:09:15.600 +02:00 [ERR] : Student does not exist.
+2022-09-22 18:09:27.694 +02:00 [INF] string: Getting ID for corresponding student
+2022-09-22 18:09:27.712 +02:00 [INF] : Getting all exams for student with ID 1
+2022-09-22 18:09:33.340 +02:00 [INF] admin: Getting all registered students
+2022-09-22 18:09:33.340 +02:00 [INF] admin: Getting all exams
+2022-09-22 18:09:43.331 +02:00 [INF] admin: Getting all registered students
+2022-09-22 18:09:43.331 +02:00 [INF] admin: Getting all exams
+2022-09-22 18:11:11.221 +02:00 [INF] admin: Getting all registered students
+2022-09-22 18:11:11.228 +02:00 [INF] admin: Getting all exams
+2022-09-22 18:11:15.807 +02:00 [INF] admin: Getting all exams
+2022-09-22 18:11:15.807 +02:00 [INF] admin: Getting all registered students
+2022-09-22 18:11:26.208 +02:00 [INF] admin: Getting all registered students
+2022-09-22 18:11:26.208 +02:00 [INF] admin: Getting all exams
+2022-09-22 18:12:08.998 +02:00 [INF] string: Getting ID for corresponding student
+2022-09-22 18:12:09.010 +02:00 [INF] : Getting all exams for student with ID 1
+2022-09-22 18:13:29.715 +02:00 [INF] : Getting ID for corresponding student
+2022-09-22 18:13:29.753 +02:00 [ERR] : Student does not exist.
+2022-09-22 18:13:35.094 +02:00 [INF] : Getting ID for corresponding student
+2022-09-22 18:13:35.132 +02:00 [ERR] : Student does not exist.
+2022-09-22 18:13:44.799 +02:00 [INF] string: Getting ID for corresponding student
+2022-09-22 18:13:44.816 +02:00 [INF] : Getting all exams for student with ID 1
+2022-09-22 18:14:00.657 +02:00 [INF] : Getting ID for corresponding student
+2022-09-22 18:14:00.762 +02:00 [ERR] : Student does not exist.
+2022-09-22 18:14:54.229 +02:00 [INF] string: Getting ID for corresponding student
+2022-09-22 18:14:54.238 +02:00 [INF] : Getting all exams for student with ID 1
+2022-09-22 18:18:30.963 +02:00 [INF] string: Getting ID for corresponding student
+2022-09-22 18:18:33.676 +02:00 [INF] : Getting all exams for student with ID 1
+2022-09-22 18:18:45.859 +02:00 [INF] : Getting ID for corresponding student
+2022-09-22 18:19:22.138 +02:00 [ERR] : Student does not exist.
+2022-09-22 18:19:31.490 +02:00 [INF] string: Getting ID for corresponding student
+2022-09-22 18:19:31.740 +02:00 [INF] : Getting all exams for student with ID 1
+2022-09-22 18:19:38.304 +02:00 [INF] : Getting ID for corresponding student
+2022-09-22 18:20:07.018 +02:00 [ERR] : Student does not exist.
+2022-09-22 18:23:59.787 +02:00 [INF] string: Getting ID for corresponding student
+2022-09-22 18:23:59.810 +02:00 [INF] : Getting all exams for student with ID 1
+2022-09-22 18:24:09.859 +02:00 [INF] : Getting ID for corresponding student
+2022-09-22 18:24:09.901 +02:00 [ERR] : Student does not exist.
+2022-09-22 18:24:51.468 +02:00 [INF] : Getting ID for corresponding student
+2022-09-22 18:24:51.505 +02:00 [ERR] : Student does not exist.
+2022-09-22 18:33:44.897 +02:00 [INF] string: Getting ID for corresponding student
+2022-09-22 18:33:44.949 +02:00 [INF] : Getting all exams for student with ID 1
+2022-09-22 18:34:23.153 +02:00 [INF] : Getting ID for corresponding student
+2022-09-22 18:34:23.208 +02:00 [ERR] : Student does not exist.
+2022-09-22 18:34:51.533 +02:00 [INF] admin: Getting all exams
+2022-09-22 18:34:51.537 +02:00 [INF] admin: Getting all registered students
+2022-09-22 18:35:02.205 +02:00 [INF] admin: Getting all registered students
+2022-09-22 18:35:02.205 +02:00 [INF] admin: Getting all exams
+2022-09-22 18:35:17.956 +02:00 [INF] string: Getting ID for corresponding student
+2022-09-22 18:35:17.971 +02:00 [INF] : Getting all exams for student with ID 1
+2022-09-22 18:35:23.293 +02:00 [INF] : Getting ID for corresponding student
+2022-09-22 18:35:23.332 +02:00 [ERR] : Student does not exist.
+2022-09-22 18:41:48.472 +02:00 [INF] guest: Getting ID for corresponding student
+2022-09-22 18:41:48.518 +02:00 [INF] : Getting all exams for student with ID 2
+2022-09-22 18:42:01.868 +02:00 [INF] : Getting ID for corresponding student
+2022-09-22 18:42:01.909 +02:00 [ERR] : Student does not exist.
+2022-09-22 18:59:15.629 +02:00 [INF] string: Getting ID for corresponding student
+2022-09-22 18:59:15.640 +02:00 [INF] : Getting all exams for student with ID 1
+2022-09-22 19:05:04.262 +02:00 [INF] string: Getting ID for corresponding student
+2022-09-22 19:05:04.337 +02:00 [INF] : Getting all exams for student with ID 1
+2022-09-22 19:05:34.983 +02:00 [INF] admin: Getting all registered students
+2022-09-22 19:05:34.983 +02:00 [INF] admin: Getting all exams

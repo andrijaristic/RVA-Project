@@ -118,7 +118,7 @@ namespace Server.Services
         }
 
         // Make a new Student class entity every time STUDENT is registered.
-        public async Task<User> RegisterNewUser(RegisterDTO registerDTO)
+        public async Task<DisplayUserDTO> RegisterNewUser(RegisterDTO registerDTO)
         {
             User user = _mapper.Map<User>(registerDTO);
             ValidationResult result = _userValidation.Validate(user);
@@ -138,10 +138,10 @@ namespace Server.Services
             await _unitOfWork.Students.AddAsync(student);
             await _unitOfWork.SaveAsync();
 
-            return user;
+            return _mapper.Map<DisplayUserDTO>(user);
         }
 
-        public async Task<User> UpdateUser(UpdateDTO updateDTO)
+        public async Task<DisplayUserDTO> UpdateUser(UpdateDTO updateDTO)
         {
             User user = await _unitOfWork.Users.FindUserByUsername(updateDTO.Username);
 
@@ -169,7 +169,7 @@ namespace Server.Services
 
             await _unitOfWork.SaveAsync();
 
-            return user;
+            return _mapper.Map<DisplayUserDTO>(user);
         }
     }
 }

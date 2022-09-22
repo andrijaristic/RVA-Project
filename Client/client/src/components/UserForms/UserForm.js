@@ -4,8 +4,6 @@ import useHttp from "../../hooks/use-http";
 
 import classes from "./UserForm.module.css";
 
-import Select from "../UI/Input/Select";
-
 import Card from "../UI/Card/Card";
 import Input from "../UI/Input/Input";
 import Button from "../UI/Button/Button";
@@ -62,7 +60,7 @@ const UserForm = (props) => {
     const data = await sendRequest(requestConfig); // fetch(url, {}) from useHttp();
     if (data.hasError) {
       setDataError({
-        title: "Error",
+        title: data.title,
         message: data.errorMessage,
       });
 
@@ -84,6 +82,9 @@ const UserForm = (props) => {
         />
       )}
       <Card className={classes.login}>
+        <section>
+          <h2>{props.title}</h2>
+        </section>
         <form onSubmit={submitHandler}>
           <Input
             ref={firstInputRef}

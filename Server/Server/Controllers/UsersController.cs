@@ -38,7 +38,7 @@ namespace Server.Controllers
         {
             try
             {
-                User user = await _userService.RegisterNewUser(registerDTO);
+                DisplayUserDTO user = await _userService.RegisterNewUser(registerDTO);
                 return Ok(user); 
             } catch (Exception e)
             {
@@ -53,7 +53,7 @@ namespace Server.Controllers
             try
             {
                 updateDTO.Username = User.Identity.Name;
-                User user = await _userService.UpdateUser(updateDTO);
+                DisplayUserDTO user = await _userService.UpdateUser(updateDTO);
                 return Ok(user);
             } catch (Exception e)
             {

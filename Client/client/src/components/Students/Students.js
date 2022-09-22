@@ -129,6 +129,28 @@ const Students = () => {
     setFilter(initFilter);
   };
 
+  const duplicateStudentHandler = async (studentId) => {
+    const requestConfig = {
+      url: `https://localhost:44344/api/Students/duplicate/${studentId}`,
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    const data = await sendRequest(requestConfig);
+    if (data.hasError) {
+      setInfoData({
+        title: data.title,
+        message: data.message,
+      });
+    }
+
+    setStudents((prevStudents) => {
+      return [...prevStudents, data];
+    });
+  };
+
   let filteredStudents;
   if (students !== null) {
     filteredStudents = filterStudents(students, filter);
@@ -142,6 +164,15 @@ const Students = () => {
       name: item.examName,
       date: item.examDate,
     }));
+
+    examsFilter = [
+      {
+        id: Math.random(),
+        name: "",
+        date: new Date().toLocaleDateString("en-US"),
+      },
+      ...examsFilter,
+    ];
   }
 
   return (
@@ -164,9 +195,7 @@ const Students = () => {
       {students !== null && (
         <StudentsList
           items={filteredStudents}
-          onClick={() => {
-            console.log("hello");
-          }}
+          onClick={duplicateStudentHandler}
         />
       )}
       {students && students.length === 0 && (

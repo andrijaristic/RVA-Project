@@ -38,7 +38,8 @@ const ProfilePage = () => {
   return (
     <UserForm
       requestConfig={requestConfig}
-      dataHandler={authCtx.onLogin}
+      dataHandler={authCtx.onUpdate}
+      title="Editing name and last name"
       firstInput={firstInput}
       secondInput={secondInput}
       onCreateBody={createBodyHandler}

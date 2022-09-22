@@ -33,7 +33,7 @@ namespace Server.Repositories
 
         public async Task<Student> GetStudentForUser(string username)
         {
-            Student student = await _dbContext.Students.SingleOrDefaultAsync<Student>(s => s.UserUsername == username);
+            Student student = await _dbContext.Students.FirstOrDefaultAsync<Student>(s => s.UserUsername == username);
             return student;
         }
 

@@ -23,13 +23,11 @@ namespace Server.Controllers
         }
         
         [HttpGet("get-id")]
-        [Authorize(Policy = "SystemUser")]
         public async Task<IActionResult> Get()
         {
             try
             {
                 _logger.LogMessage($"{User.Identity.Name}: Getting ID for corresponding student", Enums.ELogType.INFO);
-
                 string username = User.Identity.Name;
                 DisplayStudentDTO student = await _studentService.GetStudentId(username);
                 return Ok(student);

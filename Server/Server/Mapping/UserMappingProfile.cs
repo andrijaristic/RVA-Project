@@ -11,6 +11,7 @@ namespace Server.Mapping
             CreateMap<User, RegisterDTO>().ReverseMap();
             CreateMap<User, AuthDTO>().ReverseMap();
             CreateMap<User, UpdateDTO>().ReverseMap();
+            CreateMap<User, DisplayUserDTO>().ReverseMap();
         }
     }
 }

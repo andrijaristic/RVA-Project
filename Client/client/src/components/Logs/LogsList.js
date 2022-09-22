@@ -5,7 +5,7 @@ const LogsList = (props) => {
   const logs = props.items.map((item) => {
     return (
       <LogItem
-        key={item.timestamp}
+        key={Math.random()}
         timestmap={item.timestamp}
         eventType={item.eventType}
         message={item.message}
