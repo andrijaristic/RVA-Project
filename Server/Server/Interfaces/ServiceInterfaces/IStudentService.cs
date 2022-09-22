@@ -6,5 +6,6 @@ namespace Server.Interfaces.ServiceInterfaces
     {
         Task<DisplayStudentDTO> GetStudentId(string username);
         Task<List<DetailedStudentDTO>> GetStudentsDetailed();
+        Task<DetailedStudentDTO> Duplicate(int id);
     }
 }

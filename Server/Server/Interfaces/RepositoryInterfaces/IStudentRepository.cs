@@ -10,5 +10,6 @@ namespace Server.Interfaces.RepositoryInterfaces
         Task<Student> GetStudentForUser(string username);
         Task<List<Student>> GetStudentsForUser(string username);
         Task<List<Student>> GetStudentsDetailed();
+        Task<Student> GetStudentComplete(int studentId);
     }
 }

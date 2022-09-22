@@ -25,6 +25,12 @@ namespace Server.Repositories
             return student;
         }
 
+        public async Task<Student> GetStudentComplete(int studentId)
+        {
+            Student student = await _dbContext.Students.Where(x => x.Id == studentId).Include(x => x.Exams).ThenInclude(x => x.Subject).SingleOrDefaultAsync();
+            return student;
+        }
+
         public async Task<Student> GetStudentForUser(string username)
         {
             Student student = await _dbContext.Students.SingleOrDefaultAsync<Student>(s => s.UserUsername == username);

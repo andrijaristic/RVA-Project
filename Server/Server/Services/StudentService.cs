@@ -17,6 +17,26 @@ namespace Server.Services
             _mapper = mapper;
         }
 
+        public async Task<DetailedStudentDTO> Duplicate(int id)
+        {
+            Student student = await _unitOfWork.Students.GetStudentComplete(id);
+            if (student == null)
+            {
+                throw new Exception($"Student with ID [{id}] doesn't exist.");
+            }
+
+            Student studentCopy = student.DeepCopy();
+            await _unitOfWork.Students.AddAsync(studentCopy);
+
+            foreach (Exam exam in studentCopy.Exams)
+            {
+                await _unitOfWork.Exams.AddAsync(exam);
+            }
+
+            await _unitOfWork.SaveAsync();
+            return _mapper.Map<DetailedStudentDTO>(studentCopy);
+        }
+
         public async Task<DisplayStudentDTO> GetStudentId(string username)
         {
             Student student = await _unitOfWork.Students.GetStudentForUser(username);

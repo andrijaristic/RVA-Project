@@ -58,5 +58,23 @@ namespace Server.Controllers
                 return BadRequest(error);
             }
         }
+
+        [HttpPost("duplicate/{id}")]
+        [Authorize(Roles = "admin")]
+        [Authorize(Policy = "SystemUser")]
+        public async Task<IActionResult> Duplicate(int id)
+        {
+            try
+            {
+                _logger.LogMessage($"{User.Identity.Name}: Duplicating student with ID [{id}]", Enums.ELogType.INFO);
+                DetailedStudentDTO detailedStudentDTO = await _studentService.Duplicate(id);
+                return Ok(detailedStudentDTO);
+            } catch (Exception e)
+            {
+                _logger.LogMessage($"{User.Identity.Name}: {e.Message}", Enums.ELogType.ERROR);
+                ErrorDTO error = new ErrorDTO() { Title = "Student duplication error", Message = e.Message};
+                return BadRequest(error);
+            }
+        }
     }
 }
