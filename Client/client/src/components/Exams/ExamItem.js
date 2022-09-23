@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ExamItem = (props) => {
   const clickHandler = () => {
-    props.onClick(props.id);
+    props.onClick(props.id, props.date);
   };
 
   const viewHandler = () => {

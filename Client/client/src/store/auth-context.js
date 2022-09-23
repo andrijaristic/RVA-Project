@@ -102,7 +102,6 @@ export const AuthContextProvider = (props) => {
   };
 
   const updateHandler = (data) => {
-    const token = localStorage.getItem("token");
     setUser((prevUser) => {
       const updateUser = {
         ...prevUser,

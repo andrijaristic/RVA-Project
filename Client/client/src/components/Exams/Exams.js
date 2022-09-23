@@ -13,6 +13,7 @@ const Exams = () => {
   const history = useHistory();
   const authCtx = useContext(AuthContext);
   const { user, token } = authCtx;
+  const studentId = user.studentId;
 
   const isAdmin = user.userType === 0;
 
@@ -51,7 +52,7 @@ const Exams = () => {
     return () => {
       clearTimeout(timer);
     };
-  }, [token, sendRequest]);
+  }, [token, user, studentId, sendRequest]);
 
   // Radi LoadingModal na prvom otvaranju/rucnom refresh stranice.
   useEffect(() => {
@@ -88,7 +89,7 @@ const Exams = () => {
     authCtx.onApplication({ id: data.id, date: data.examDate });
   };
 
-  const removeStudentFromExamHandler = async (examId) => {
+  const removeStudentFromExamHandler = async (examId, examDate) => {
     const requestConfig = {
       url: "https://localhost:44344/api/StudentResults/remove",
       method: "DELETE",
@@ -110,7 +111,7 @@ const Exams = () => {
       });
     }
 
-    authCtx.onWithdrawal({ id: data.id, date: data.examDate });
+    authCtx.onWithdrawal({ id: examId, date: examDate });
   };
 
   const viewExamResultHandler = async (examId) => {

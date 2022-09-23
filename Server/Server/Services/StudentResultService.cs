@@ -66,6 +66,15 @@ namespace Server.Services
                 throw new Exception($"Student with ID [{addStudentResultDTO.StudentId}] doesn't exist for {exam.ExamName}.");
             }
 
+            foreach (Exam examEl in student.Student.Exams)
+            {
+                if (examEl.Id == exam.Id)
+                {
+                    student.Student.Exams.Remove(examEl);
+                    break;
+                }
+            }
+
             if (student.isTouched)
             {
                 throw new Exception($"Student with ID [{addStudentResultDTO.StudentId}] has already been graded for {exam.ExamName}.");

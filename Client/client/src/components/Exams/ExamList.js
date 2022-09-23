@@ -7,6 +7,7 @@ import AuthContext from "../../store/auth-context";
 const ExamList = (props) => {
   const authCtx = useContext(AuthContext);
   const registeredExams = authCtx.user.exams;
+  console.log(registeredExams);
   // Function to get all registered exams. Use here to update. or in Exams.js file.
 
   const exams = props.items.map((item) => {
@@ -28,6 +29,7 @@ const ExamList = (props) => {
       <ExamItem
         key={item.id}
         id={item.id}
+        date={item.date}
         name={item.examName}
         dateTime={formattedDate}
         onClick={registeredToExam ? props.onRemove : props.onAdd}
