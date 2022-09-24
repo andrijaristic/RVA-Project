@@ -2,6 +2,9 @@ import React, { useState, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import useHttp from "../../hooks/use-http";
 
+import classes from "./Students.module.css";
+
+import Card from "../UI/Card/Card";
 import InfoModal from "../UI/Modals/InfoModal";
 import LoadingModal from "../UI/Modals/LoadingModal";
 import AuthContext from "../../store/auth-context";
@@ -176,7 +179,7 @@ const Students = () => {
   }
 
   return (
-    <React.Fragment>
+    <div className={classes.container}>
       {isLoading && isInit && <LoadingModal />}
       {infoData && (
         <InfoModal
@@ -198,12 +201,17 @@ const Students = () => {
           onClick={duplicateStudentHandler}
         />
       )}
-      {students && students.length === 0 && (
-        <section>
-          <h1>There are no registered students!</h1>
-        </section>
+      {students !== null && students.length === 0 && (
+        <Card className={classes.nothing}>
+          <section className={classes["no-students"]}>
+            <h2>
+              There are no
+              <br /> registered students!
+            </h2>
+          </section>
+        </Card>
       )}
-    </React.Fragment>
+    </div>
   );
 };
 

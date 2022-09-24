@@ -82,7 +82,7 @@ const UserForm = (props) => {
         />
       )}
       <Card className={classes.login}>
-        <section>
+        <section className={classes.title}>
           <h2>{props.title}</h2>
         </section>
         <form onSubmit={submitHandler}>
@@ -95,6 +95,7 @@ const UserForm = (props) => {
             isValid={isFirstInputValid}
             onBlur={firstInputBlurHandler}
             onChange={firstInputChangeHandler}
+            name={props.firstInput.name}
           />
           <Input
             ref={secondInputRef}
@@ -105,8 +106,13 @@ const UserForm = (props) => {
             isValid={isSecondInputValid}
             onBlur={secondInputBlurHandler}
             onChange={secondInputChangeHandler}
+            name={props.secondInput.name}
           />
-          <Button type="submit" disabled={!isFormValid}>
+          <Button
+            type="submit"
+            disabled={!isFormValid}
+            className={classes.button}
+          >
             Submit
           </Button>
         </form>

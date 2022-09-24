@@ -25,18 +25,20 @@
   background-color: #ffeff1;
 }
 
-.control select {
+.control select,
+select option {
   flex: 3;
   font: inherit;
   padding: 0.35rem 0.35rem;
   border-radius: 6px;
   border: 1px solid #ccc;
+  font-weight: lighter;
 }
 
 .control select:focus {
   outline: none;
   border-color: #4f005f;
-  background: #f6dbfc;
+  background: rgb(165, 186, 255);
 }
 
 @media (min-width: 768px) {

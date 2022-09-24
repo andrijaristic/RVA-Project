@@ -38,6 +38,7 @@ const DetailedExam = () => {
       setInfoData({
         title: data.title,
         message: data.message,
+        isError: data.hasError,
       });
 
       return;
@@ -74,11 +75,11 @@ const DetailedExam = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: {
-        examId: examId,
+      body: JSON.stringify({
         studentId: studentId,
+        examId: examId,
         result: didPass,
-      },
+      }),
     };
 
     const data = await sendRequest(requestConfig);
@@ -97,7 +98,7 @@ const DetailedExam = () => {
         <InfoModal
           title={infoData.title}
           message={infoData.message}
-          onConfirm={hideModalHandler}
+          onClose={hideModalHandler}
         />
       )}
       {students !== null && (

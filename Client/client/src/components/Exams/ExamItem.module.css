@@ -1,0 +1,29 @@
+.exam {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.info {
+  color: ghostwhite;
+  font-weight: bold;
+}
+
+.exam:last-of-type {
+  border-bottom: none;
+}
+
+.exam figure {
+  display: flex;
+  margin: 10px;
+  padding: 2px;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  font-size: 1.5rem;
+}

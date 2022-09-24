@@ -13,15 +13,17 @@ const ModalOverlay = (props) => {
   return (
     <Card className={classes.modal}>
       <header className={classes.header}>
-        <h1>{props.title}</h1>
+        <h2>{props.title}</h2>
       </header>
       <div className={classes.content}>
         <p>{props.message}</p>
       </div>
       <footer className={classes.actions}>
-        <Button onClick={props.onConfirm} className={classes.button}>
-          Okay
-        </Button>
+        {!props.onClose && (
+          <Button onClick={props.onConfirm} className={classes.button}>
+            Ok
+          </Button>
+        )}
         {props.onClose && (
           <Button onClick={props.onClose} className={classes.button}>
             Close

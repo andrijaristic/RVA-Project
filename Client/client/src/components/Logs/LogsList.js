@@ -1,12 +1,25 @@
+import classes from "./LogsList.module.css";
 import Card from "../UI/Card/Card";
 import LogItem from "./LogItem";
 
 const LogsList = (props) => {
+  const options = {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    hours: "numeric",
+    minutes: "numeric",
+    seconds: "numeric",
+  };
   const logs = props.items.map((item) => {
+    const timestamp = new Date(item.timestamp).toLocaleTimeString(
+      "en-US",
+      options
+    );
     return (
       <LogItem
         key={Math.random()}
-        timestmap={item.timestamp}
+        timestamp={timestamp}
         eventType={item.eventType}
         message={item.message}
       />
@@ -14,9 +27,9 @@ const LogsList = (props) => {
   });
 
   return (
-    <section>
-      <Card>
-        <section>
+    <section className={classes.logs}>
+      <Card className={classes["top-shorten"]}>
+        <section className={classes.title}>
           <h1>Logs</h1>
         </section>
         <ul>{logs}</ul>

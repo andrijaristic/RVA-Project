@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 
+import classes from "./AddExamForm.module.css";
 import Card from "../UI/Card/Card";
 import Button from "../UI/Button/Button";
 import Input from "../UI/Input/Input";
@@ -34,9 +35,9 @@ const AddExamForm = (props) => {
   };
 
   return (
-    <Card>
-      <section>
-        <h1>{props.title}</h1>
+    <Card className={classes["new-exam"]}>
+      <section className={classes.title}>
+        <h2>{props.title}</h2>
       </section>
       <form onSubmit={submitHandler}>
         <Input
@@ -59,10 +60,9 @@ const AddExamForm = (props) => {
         <Select
           ref={subjectRef}
           id="subject"
-          label="Subjects: "
+          label="Subject: "
           items={props.items}
         />
-        {/* Date picker */}
         <Button type="submit" disabled={!isNameValid}>
           Submit
         </Button>

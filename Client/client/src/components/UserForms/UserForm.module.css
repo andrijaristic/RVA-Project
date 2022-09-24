@@ -1,8 +1,13 @@
 .login {
-  width: 90%;
-  max-width: 40rem;
-  margin: 10rem auto;
-  padding: 2rem;
+  width: 90% !important;
+  max-width: 50rem !important;
+  margin: 12rem auto !important;
+  padding: 4rem !important;
+  padding-bottom: 2rem !important;
+  color: ghostwhite !important;
+  background: rgba(0, 0, 0, 0.855) !important;
+  border: 1px solid black !important;
+  border-radius: 2rem !important;
 }
 
 .actions {
@@ -15,7 +20,11 @@
   text-align: center;
 }
 
-.title h1 {
+.title h2 {
   font-size: 2rem;
-  color: #351188;
+  color: ghostwhite;
+}
+
+.button {
+  margin-top: 2rem;
 }

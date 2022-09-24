@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useCallback, useContext } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams, Link } from "react-router-dom";
 import useHttp from "../../hooks/use-http";
 
+import classes from "./StudentExams.module.css";
 import AuthContext from "../../store/auth-context";
 import InfoModal from "../UI/Modals/InfoModal";
 import LoadingModal from "../UI/Modals/LoadingModal";
 import StudentExamList from "./StudentExamList";
+import Button from "../UI/Button/Button";
+import Card from "../UI/Card/Card";
 
 let isInit = true;
 
@@ -132,11 +135,20 @@ const StudentExams = () => {
         />
       )}
       {exams !== null && exams.length === 0 && (
-        <section>
-          <h2>The student is not registered to any exams.</h2>
-        </section>
+        <Card className={classes.nothing}>
+          <section className={classes["no-exams"]}>
+            <h2>
+              The student is not
+              <br />
+              registered to any exams
+            </h2>
+            <Link to="/students">
+              <Button className={classes.button}>Back to student list</Button>
+            </Link>
+          </section>
+        </Card>
       )}
-      {exams !== null && (
+      {exams !== null && exams.length !== 0 && (
         <StudentExamList
           items={exams}
           onRemove={removeStudentFromExamHandler}

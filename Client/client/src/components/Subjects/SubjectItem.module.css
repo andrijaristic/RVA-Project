@@ -1,0 +1,18 @@
+.subject {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.info {
+  color: ghostwhite;
+  font-weight: bold;
+}
+
+.subject:last-of-type {
+  border-bottom: none;
+}

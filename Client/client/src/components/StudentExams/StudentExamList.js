@@ -1,3 +1,5 @@
+import classes from "./StudentExamList.module.css";
+
 import Card from "../UI/Card/Card";
 import StudentExamItem from "./StudentExamItem";
 
@@ -16,7 +18,16 @@ const StudentExamList = (props) => {
       />
     );
   });
-  return <Card>{exams}</Card>;
+  return (
+    <section className={classes.exams}>
+      <Card className={classes["top-shorten"]}>
+        <section className={classes.title}>
+          <h1>Student exams</h1>
+        </section>
+        <ul>{exams}</ul>
+      </Card>
+    </section>
+  );
 };
 
 export default StudentExamList;

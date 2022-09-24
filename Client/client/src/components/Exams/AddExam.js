@@ -6,7 +6,6 @@ import AuthContext from "../../store/auth-context";
 import InfoModal from "../UI/Modals/InfoModal";
 import LoadingModal from "../UI/Modals/LoadingModal";
 import AddExamForm from "./AddExamForm";
-import UserForm from "../UserForms/UserForm";
 
 const AddExam = () => {
   const history = useHistory();
@@ -111,7 +110,7 @@ const AddExam = () => {
       )}
       {subjects !== null && (
         <AddExamForm
-          title="New Exam"
+          title="New Exam creation"
           items={subjects}
           onSubmit={addExamHandler}
         />

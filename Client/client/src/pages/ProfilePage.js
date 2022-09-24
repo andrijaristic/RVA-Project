@@ -5,6 +5,7 @@ import UserForm from "../components/UserForms/UserForm";
 
 const ProfilePage = () => {
   const authCtx = useContext(AuthContext);
+  const { user } = authCtx;
   const requestConfig = {
     url: "https://localhost:44344/api/Users",
     method: "PUT",
@@ -17,13 +18,15 @@ const ProfilePage = () => {
   const firstInput = {
     id: "name",
     type: "text",
-    label: "Name",
+    label: "First name",
+    name: user.name,
   };
 
   const secondInput = {
     id: "lastName",
     type: "text",
     label: "Last name",
+    name: user.lastName,
   };
 
   const createBodyHandler = (data) => {
@@ -39,7 +42,7 @@ const ProfilePage = () => {
     <UserForm
       requestConfig={requestConfig}
       dataHandler={authCtx.onUpdate}
-      title="Editing name and last name"
+      title="Editing First and Last name"
       firstInput={firstInput}
       secondInput={secondInput}
       onCreateBody={createBodyHandler}

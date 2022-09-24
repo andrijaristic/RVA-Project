@@ -8,7 +8,11 @@ const HomePage = () => {
 
   return (
     <div className="fancy">
-      {user ? `${user.name} ${user.lastName}` : "Home"}
+      <p>
+        {user ? "Welcome, " : "Welcome"}
+        <br />
+        {user && `${user.name} ${user.lastName}`}
+      </p>
     </div>
   );
 };

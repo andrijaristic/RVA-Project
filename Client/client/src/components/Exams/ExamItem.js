@@ -1,5 +1,6 @@
 import Button from "../UI/Button/Button";
 import { Link } from "react-router-dom";
+import classes from "./ExamItem.module.css";
 
 const ExamItem = (props) => {
   const clickHandler = () => {
@@ -12,10 +13,16 @@ const ExamItem = (props) => {
 
   if (props.admin) {
     return (
-      <li>
-        <h2>{props.name}</h2>
-        <p>{props.dateTime}</p>
-        <Link to={`/exams/${props.id}`}>Detailed view</Link>
+      <li className={classes.exam}>
+        <section className={classes.info}>
+          <h2>{props.name}</h2>
+          <p>{props.dateTime}</p>
+        </section>
+        <figure>
+          <Link to={`/exams/${props.id}`}>
+            <Button>Detailed view</Button>
+          </Link>
+        </figure>
       </li>
     );
   }
@@ -28,22 +35,36 @@ const ExamItem = (props) => {
   if (props.registered && props.datePassed) {
     // Registrovan i prosao datum prijave.
     clickHandlerContent = viewHandler;
-    buttonContent = <Button onClick={clickHandlerContent}>View Results</Button>;
+    buttonContent = (
+      <Button onClick={clickHandlerContent} className={classes.button}>
+        View Results
+      </Button>
+    );
   } else if (props.registered && !props.datePassed) {
     // Registrovan i nije prosao datum prijave.
     clickHandlerContent = clickHandler;
-    buttonContent = <Button onClick={clickHandlerContent}>Remove</Button>;
+    buttonContent = (
+      <Button onClick={clickHandlerContent} className={classes.button}>
+        Remove
+      </Button>
+    );
   } else if (!props.registered && !props.datePassed) {
     // Nije registrovan i nije prosao datum prijave.
     clickHandlerContent = clickHandler;
-    buttonContent = <Button onClick={clickHandlerContent}>Apply</Button>;
+    buttonContent = (
+      <Button onClick={clickHandlerContent} className={classes.button}>
+        Apply
+      </Button>
+    );
   }
 
   return (
-    <li>
-      <h2>{props.name}</h2>
-      <p>{props.dateTime}</p>
-      {buttonContent}
+    <li className={classes.exam}>
+      <section className={classes.info}>
+        <h2>{props.name}</h2>
+        <p>{props.dateTime}</p>
+      </section>
+      <figure>{buttonContent}</figure>
     </li>
   );
 };

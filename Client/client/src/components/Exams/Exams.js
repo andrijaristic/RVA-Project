@@ -2,6 +2,8 @@ import React, { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import useHttp from "../../hooks/use-http";
 
+import classes from "./Exams.module.css";
+import Card from "../UI/Card/Card";
 import InfoModal from "../UI/Modals/InfoModal";
 import LoadingModal from "../UI/Modals/LoadingModal";
 import AuthContext from "../../store/auth-context";
@@ -157,9 +159,11 @@ const Exams = () => {
         />
       )}
       {exams && exams.length === 0 && (
-        <section>
-          <h1>No exams available!</h1>
-        </section>
+        <Card className={classes.nothing}>
+          <section className={classes["no-exams"]}>
+            <h2>No exams available!</h2>
+          </section>
+        </Card>
       )}
     </React.Fragment>
   );

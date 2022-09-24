@@ -200,6 +200,9 @@ const RegisterForm = () => {
         />
       )}
       <Card className={classes.register}>
+        <section className={classes.title}>
+          <h2>New User Registration</h2>
+        </section>
         <form onSubmit={submitHandler}>
           <Input
             ref={usernameRef}
@@ -247,7 +250,11 @@ const RegisterForm = () => {
             label="User type: "
             items={USER_TYPES}
           />
-          <Button type="submit" disabled={!isFormValid}>
+          <Button
+            type="submit"
+            disabled={!isFormValid}
+            className={classes.button}
+          >
             Submit
           </Button>
         </form>

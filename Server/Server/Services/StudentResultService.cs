@@ -93,7 +93,7 @@ namespace Server.Services
 
             if (students == null || students.Count == 0)
             {
-                throw new Exception($"There are no students registerd for exam with ID [{id}].");
+                throw new Exception($"There are no students registered for exam with ID [{id}].");
             }
 
             return _mapper.Map<List<DisplayStudentResultDTO>>(students);

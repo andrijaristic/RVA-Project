@@ -1,5 +1,4 @@
-import React from "react";
-
+import classes from "./StudentsList.module.css";
 import Card from "../UI/Card/Card";
 import StudentItem from "./StudentItem";
 
@@ -16,9 +15,14 @@ const StudentsList = (props) => {
   });
 
   return (
-    <Card>
-      <ul>{students}</ul>
-    </Card>
+    <section className={classes.students}>
+      <Card className={classes["top-shorten"]}>
+        <section className={classes.title}>
+          <h1>Students</h1>
+        </section>
+        <ul>{students}</ul>
+      </Card>
+    </section>
   );
 };
 

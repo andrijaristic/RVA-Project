@@ -32,7 +32,9 @@ const Navigation = () => {
           </li>
         )}
         {authCtx.isLoggedIn && (
-          <li>
+          <li
+            className={isAdmin ? classes["first-admin"] : classes["first-user"]}
+          >
             <NavLink activeClassName={classes.active} to="/logs">
               Logs
             </NavLink>

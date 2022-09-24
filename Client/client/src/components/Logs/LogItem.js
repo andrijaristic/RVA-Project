@@ -1,14 +1,21 @@
-import React from "react";
+import classes from "./LogItem.module.css";
 
 const LogItem = (props) => {
   return (
-    <li>
+    <li className={classes.log}>
       <div>
-        <h3>{props.timestamp}</h3>
-        <div>
-          <p>[{props.eventType}]</p>
-          {props.message}
+        <div className={classes.errorType}>
+          <p
+            className={`${
+              props.eventType === "ERR" ? classes.err : classes.inf
+            }`}
+          >
+            {`[${props.eventType}]`}
+          </p>
+          &nbsp;
+          <p className={classes.timestamp}>{props.timestamp}</p>
         </div>
+        {props.message}
       </div>
     </li>
   );

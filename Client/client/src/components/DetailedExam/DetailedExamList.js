@@ -1,3 +1,5 @@
+import classes from "./DetailedExamList.module.css";
+
 import Card from "../UI/Card/Card";
 import DetailedExamItem from "./DetailedExamItem";
 
@@ -6,7 +8,7 @@ const DetailedExamList = (props) => {
     return (
       <DetailedExamItem
         key={Math.random()}
-        id={item.id}
+        id={item.student.id}
         studentName={`${item.student.name} ${item.student.lastName}`}
         label={props.label}
         result={item.result ? "Passed" : "Failed"}
@@ -17,9 +19,14 @@ const DetailedExamList = (props) => {
   });
 
   return (
-    <Card>
-      <ul>{students}</ul>
-    </Card>
+    <section className={classes.exams}>
+      <Card className={classes["top-shorten"]}>
+        <section className={classes.title}>
+          <h1>Registered students</h1>
+        </section>
+        <ul>{students}</ul>
+      </Card>
+    </section>
   );
 };
 

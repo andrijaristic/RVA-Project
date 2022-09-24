@@ -9,15 +9,18 @@ const StudentItem = (props) => {
   };
 
   return (
-    <div>
+    <li className={classes.item}>
       <section>
-        <h2 className={classes.upper}>{props.studentName}</h2>
+        <h2 className={classes.name}>{props.studentName}</h2>
       </section>
-      <Link to={`/students/${props.id}`}>
-        <Button>View exams</Button>
-      </Link>
-      <Button onClick={clickHandler}>Duplicate</Button>
-    </div>
+      <figure>
+        <Link to={`/students/${props.id}`} className={classes["first-button"]}>
+          <Button>View exams</Button>
+        </Link>
+        &nbsp;
+        <Button onClick={clickHandler}>Duplicate</Button>
+      </figure>
+    </li>
   );
 };
 

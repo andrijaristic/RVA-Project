@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 
+import classes from "./AddSubjectForm.module.css";
 import Card from "../UI/Card/Card";
 import Button from "../UI/Button/Button";
 import Input from "../UI/Input/Input";
@@ -24,11 +25,11 @@ const AddSubjectForm = (props) => {
   };
 
   return (
-    <Card>
-      <section>
+    <Card className={classes["new-subject"]}>
+      <section className={classes.title}>
         <h1>{props.title}</h1>
       </section>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler} className={classes.actions}>
         <Input
           ref={nameRef}
           type="text"

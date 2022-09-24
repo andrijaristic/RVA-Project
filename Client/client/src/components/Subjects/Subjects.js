@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
-
 import { useHistory } from "react-router-dom";
 import useHttp from "../../hooks/use-http";
 
+import classes from "./Subjects.module.css";
 import AuthContext from "../../store/auth-context";
 import SubjectsList from "./SubjectsList";
 import LoadingModal from "../UI/Modals/LoadingModal";
@@ -77,8 +77,8 @@ const Subjects = () => {
       )}
       {subjects && <SubjectsList items={subjects} />}
       {subjects && subjects.length === 0 && (
-        <section>
-          <h1>No subjects available!</h1>
+        <section className={classes["no-subjects"]}>
+          <h2>No subjects available!</h2>
         </section>
       )}
     </React.Fragment>

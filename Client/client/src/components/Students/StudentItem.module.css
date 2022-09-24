@@ -1,3 +1,38 @@
 h2::first-letter {
   text-transform: capitalize;
 }
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.name {
+  color: ghostwhite;
+  font-weight: bold;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.item:last-of-type {
+  border-bottom: none;
+}
+
+.item figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 2px;
+  width: 50%;
+}
+
+figure .first-button {
+  margin-right: 1rem;
+}

@@ -1,0 +1,25 @@
+.no-exams {
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.no-exams h2 {
+  font-size: 5rem;
+}
+
+.nothing {
+  width: 100%;
+  max-height: 73vh;
+  margin: 8rem auto;
+  overflow-y: auto;
+  border: 1px solid ghostwhite;
+  background: #000000da;
+}
+
+.nothing h2 {
+  color: ghostwhite;
+}
+
+.button {
+  font-size: 2rem;
+}

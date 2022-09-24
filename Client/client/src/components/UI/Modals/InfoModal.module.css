@@ -15,22 +15,30 @@
   width: 80%;
   z-index: 100;
   overflow: hidden;
-  background: white;
-  transition: 250ms ease-in-out;
+  background: ghostwhite;
 }
 
 .header {
-  background: #4a1188;
-  padding: 1rem;
+  background: #000000da;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header h2 {
   margin: 0;
-  color: white;
+  color: ghostwhite;
 }
 
 .content {
   padding: 1rem;
+  color: black;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .actions {
@@ -42,6 +50,8 @@
 .button {
   margin-left: 5px;
   margin-right: 5px;
+  font-size: 2rem;
+  border: 1px solid black;
 }
 
 @media (min-width: 768px) {

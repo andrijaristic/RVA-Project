@@ -10,17 +10,29 @@
 
 .control input {
   font: inherit;
+  font-weight: bold;
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 20rem;
   max-width: 100%;
 }
 
+.control input::placeholder {
+  color: rgba(180, 175, 175, 0.815);
+}
+
 .invalid p {
-  color: #ca3e51;
+  color: #d3233b;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .invalid input {
   border-color: #aa0b20;
   background-color: #ffeff1;
+}
+
+.invalid label {
+  color: #ff0022;
+  border-color: white;
 }

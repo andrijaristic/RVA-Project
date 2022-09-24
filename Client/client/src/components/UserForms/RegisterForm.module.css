@@ -1,8 +1,13 @@
 .register {
   width: 90%;
-  max-width: 40rem;
-  margin: 10rem auto;
-  padding: 2rem;
+  max-width: 50rem;
+  margin: 12rem auto;
+  padding: 4rem;
+  padding-bottom: 2rem;
+  color: ghostwhite;
+  background: #000000da;
+  border: 1px solid black;
+  border-radius: 2rem;
 }
 
 .actions {
@@ -15,7 +20,11 @@
   text-align: center;
 }
 
-.title h1 {
+.title h2 {
   font-size: 2rem;
-  color: #351188;
+  color: ghostwhite;
+}
+
+.button {
+  margin-top: 2rem;
 }

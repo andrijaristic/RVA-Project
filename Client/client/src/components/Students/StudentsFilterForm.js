@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 
+import classes from "./StudentsFilterForm.module.css";
 import Button from "../UI/Button/Button";
 import Input from "../UI/Input/Input";
 import Select from "../UI/Input/Select";
@@ -42,8 +43,12 @@ const StudentsFilterForm = (props) => {
         isTouched={true}
       />
       <Select ref={examRef} id="exam" label="Exam" items={props.items} />
-      <Button onClick={applyFilterHandler}>Apply</Button>
-      <Button onClick={props.onRemove}>Hide filter</Button>
+      <Button onClick={applyFilterHandler} className={classes.button}>
+        Apply
+      </Button>
+      <Button onClick={props.onRemove} className={classes.button}>
+        Hide filter
+      </Button>
     </React.Fragment>
   );
 };

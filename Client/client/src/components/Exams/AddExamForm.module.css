@@ -1,0 +1,26 @@
+.new-exam {
+  width: 90%;
+  max-width: 50rem;
+  margin: 12rem auto;
+  padding: 4rem;
+  padding-bottom: 2rem;
+  color: ghostwhite;
+  background: #000000da;
+  border: 1px solid black;
+  border-radius: 2rem;
+}
+
+.actions {
+  text-align: center;
+}
+
+.title {
+  margin-top: -3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.title h2 {
+  font-size: 2rem;
+  color: ghostwhite;
+}

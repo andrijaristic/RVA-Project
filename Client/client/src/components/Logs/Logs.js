@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import useHttp from "../../hooks/use-http";
 
+import classes from "./Logs.module.css";
 import AuthContext from "../../store/auth-context";
 import InfoModal from "../UI/Modals/InfoModal";
 import LoadingModal from "../UI/Modals/LoadingModal";
@@ -57,7 +58,7 @@ const Logs = () => {
       )}
       {logs !== null && <LogsList items={logs} />}
       {logs !== null && logs.length === 0 && (
-        <section>
+        <section className={classes["no-logs"]}>
           <h2>There are no available logs!</h2>
         </section>
       )}

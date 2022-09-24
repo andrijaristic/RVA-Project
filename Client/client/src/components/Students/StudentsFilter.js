@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import classes from "./StudentsFilter.module.css";
 import Card from "../UI/Card/Card";
 import Button from "../UI/Button/Button";
 import StudentsFilterForm from "./StudentsFilterForm";
@@ -17,7 +18,7 @@ const StudentsFilter = (props) => {
   };
 
   return (
-    <Card>
+    <Card className={classes.filter}>
       {!showFilter && <Button onClick={showFilterHandler}>Filter</Button>}
       {showFilter && (
         <StudentsFilterForm

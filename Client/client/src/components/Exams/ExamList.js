@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 
+import classes from "./ExamList.module.css";
 import Card from "../UI/Card/Card";
 import ExamItem from "./ExamItem";
 import AuthContext from "../../store/auth-context";
@@ -43,9 +44,14 @@ const ExamList = (props) => {
   });
 
   return (
-    <Card>
-      <ul>{exams}</ul>
-    </Card>
+    <section className={classes.exams}>
+      <Card className={classes["top-shorten"]}>
+        <section className={classes.title}>
+          <h1>Exams</h1>
+        </section>
+        <ul>{exams}</ul>
+      </Card>
+    </section>
   );
 };
 

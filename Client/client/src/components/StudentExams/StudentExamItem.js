@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 
+import classes from "./StudentExamItem.module.css";
 import Button from "../UI/Button/Button";
-import Card from "../UI/Card/Card";
 import Input from "../UI/Input/Input";
 
 const StudentExamItem = (props) => {
@@ -22,8 +22,8 @@ const StudentExamItem = (props) => {
   };
 
   return (
-    <Card>
-      <section>
+    <li className={classes.exam}>
+      <section className={classes.info}>
         {!editMode && <h2>{props.name}</h2>}
         {editMode && (
           <Input
@@ -34,18 +34,25 @@ const StudentExamItem = (props) => {
             name={props.name}
           />
         )}
+        <p>{props.date}</p>
       </section>
-      <div>
-        <figure>
-          <label htmlFor="date">Exam date</label>
-          <p id="date">{props.date}</p>
-        </figure>
-        {!editMode && <Button onClick={removeHandler}>Remove</Button>}
+      <figure>
+        {!editMode && (
+          <Button onClick={removeHandler} className={classes["first-button"]}>
+            Remove
+          </Button>
+        )}
+        &nbsp;
         {!editMode && <Button onClick={modeChangeHandler}>Edit</Button>}
-        {editMode && <Button onClick={editHandler}>Submit changes</Button>}
+        {editMode && (
+          <Button onClick={editHandler} className={classes["first-button"]}>
+            Submit changes
+          </Button>
+        )}
+        &nbsp;
         {editMode && <Button onClick={modeChangeHandler}>Cancel</Button>}
-      </div>
-    </Card>
+      </figure>
+    </li>
   );
 };
 

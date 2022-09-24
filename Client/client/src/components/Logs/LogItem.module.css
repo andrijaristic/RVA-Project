@@ -1,0 +1,22 @@
+.log {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+  color: ghostwhite;
+}
+
+.errorType {
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+}
+
+.errorType p.inf {
+  color: rgb(41, 248, 41);
+}
+
+.errorType p.err {
+  color: red;
+}
