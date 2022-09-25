@@ -15,13 +15,13 @@ const Exams = () => {
   const history = useHistory();
   const authCtx = useContext(AuthContext);
   const { user, token } = authCtx;
-  const studentId = user.studentId;
 
   const isAdmin = user.userType === 0;
 
   const { isLoading, sendRequest } = useHttp();
   const [exams, setExams] = useState(null);
   const [infoData, setInfoData] = useState(null);
+  const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
     const getExams = async () => {
@@ -49,12 +49,13 @@ const Exams = () => {
 
     const timer = setTimeout(async () => {
       await getExams();
-    }, 10000);
+      setToggle((prevState) => !prevState);
+    }, 12000);
 
     return () => {
       clearTimeout(timer);
     };
-  }, [token, user, studentId, sendRequest]);
+  }, [token, sendRequest, toggle]);
 
   // Radi LoadingModal na prvom otvaranju/rucnom refresh stranice.
   useEffect(() => {

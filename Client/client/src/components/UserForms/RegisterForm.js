@@ -31,8 +31,8 @@ const initInputState = {
   isLastNameTouched: false,
 };
 
-const isFiveChars = (data) => {
-  return data.trim().length >= 5;
+const isNotEmpty = (data) => {
+  return data.trim().length > 0;
 };
 
 const inputReducer = (state, action) => {
@@ -98,28 +98,28 @@ const RegisterForm = () => {
   const usernameChangeHandler = () => {
     dispatchInputState({
       type: "USERNAME_CHANGE",
-      value: isFiveChars(usernameRef.current.value),
+      value: isNotEmpty(usernameRef.current.value),
     });
   };
 
   const passwordChangeHandler = () => {
     dispatchInputState({
       type: "PASSWORD_CHANGE",
-      value: isFiveChars(passwordRef.current.value),
+      value: isNotEmpty(passwordRef.current.value),
     });
   };
 
   const nameChangeHandler = () => {
     dispatchInputState({
       type: "NAME_CHANGE",
-      value: isFiveChars(nameRef.current.value),
+      value: isNotEmpty(nameRef.current.value),
     });
   };
 
   const lastNameChangeHandler = () => {
     dispatchInputState({
       type: "LASTNAME_CHANGE",
-      value: isFiveChars(lastNameRef.current.value),
+      value: isNotEmpty(lastNameRef.current.value),
     });
   };
 

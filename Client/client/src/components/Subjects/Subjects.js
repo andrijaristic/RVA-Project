@@ -19,6 +19,7 @@ const Subjects = () => {
 
   const [subjects, setSubjects] = useState(null);
   const [errorData, setErrorData] = useState(null);
+  const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
     isInit = true;
@@ -53,12 +54,13 @@ const Subjects = () => {
 
     const timer = setTimeout(async () => {
       await getSubjects();
-    }, 10000);
+      setToggle((prevState) => !prevState);
+    }, 12000);
 
     return () => {
       clearTimeout(timer);
     };
-  }, [token, sendRequest]);
+  }, [token, sendRequest, toggle]);
 
   const hideModalHandler = () => {
     setErrorData(null);

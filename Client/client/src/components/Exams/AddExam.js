@@ -78,6 +78,12 @@ const AddExam = () => {
 
     console.log(examData.date);
     const data = await sendRequest(requestConfig);
+    if (data.hasError) {
+      setInfoData({
+        title: data.title,
+        message: data.message,
+      });
+    }
 
     setInfoData({
       title: "Success",

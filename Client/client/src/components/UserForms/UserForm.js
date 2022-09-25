@@ -27,11 +27,11 @@ const UserForm = (props) => {
   const isFormValid = isFirstInputValid && isSecondInputValid;
 
   const firstInputChangeHandler = () => {
-    setIsFirstInputValid(firstInputRef.current.value.trim().length >= 5);
+    setIsFirstInputValid(firstInputRef.current.value.trim().length > 0);
   };
 
   const secondInputChangeHandler = () => {
-    setIsSecondInputValid(secondInputRef.current.value.trim().length >= 5);
+    setIsSecondInputValid(secondInputRef.current.value.trim().length > 0);
   };
 
   const firstInputBlurHandler = () => {

@@ -22,6 +22,11 @@
                 deepCopy.Subject = this.Subject.DeepCopy();
             }
 
+            if (this.StudentResults != null)
+            {
+                deepCopy.StudentResults = this.StudentResults.ConvertAll(x => x.DeepCopy());
+            }
+
             return deepCopy;
         }
     }

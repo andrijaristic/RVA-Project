@@ -19,8 +19,8 @@ const Input = React.forwardRef((props, ref) => {
       />
       {!props.isValid && props.isTouched && (
         <p>
-          Please enter a valid {props.label.toLowerCase()} (5 or more
-          characters).
+          Please enter a valid {props.label.toLowerCase()}. (Field must not be
+          empty!)
         </p>
       )}
     </div>

@@ -23,6 +23,7 @@ const StudentExams = () => {
 
   const [exams, setExams] = useState(null);
   const [infoData, setInfoData] = useState(null);
+  const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
     isInit = true;
@@ -66,12 +67,13 @@ const StudentExams = () => {
 
     const timer = setTimeout(async () => {
       await getExams();
-    }, 10000);
+      setToggle((prevState) => !prevState);
+    }, 12000);
 
     return () => {
       clearTimeout(timer);
     };
-  }, [getExams]);
+  }, [getExams, toggle]);
 
   const hideModalHandler = () => {
     setInfoData(null);
