@@ -12,10 +12,17 @@ const AddExamForm = (props) => {
   const subjectRef = useRef();
   const dateTimeRef = useRef();
 
-  const date = new Date();
+  let dateRefValue;
+  const date = new Date().toISOString().slice(0, -8);
+  const todaysDate = new Date().toISOString();
 
   const [isNameValid, setIsNameValid] = useState(false);
   const [isNameTouched, setIsNameTouched] = useState(false);
+
+  const [isDateValid, setIsDateValid] = useState(false);
+  const [isDateTouched, setIsDateTouched] = useState(false);
+
+  const isFormValid = isNameValid && isDateValid;
 
   const nameChangeHandler = () => {
     setIsNameValid(nameRef.current.value.trim().length !== 0);
@@ -23,6 +30,16 @@ const AddExamForm = (props) => {
 
   const nameBlurHandler = () => {
     setIsNameTouched(true);
+  };
+
+  const dateChangeHandler = () => {
+    dateRefValue = new Date(dateTimeRef.current.value).toISOString();
+    setIsDateValid(dateRefValue >= todaysDate);
+  };
+
+  const dateBlurHandler = () => {
+    console.log(dateTimeRef.current.value);
+    setIsDateTouched(true);
   };
 
   const submitHandler = (event) => {
@@ -53,9 +70,12 @@ const AddExamForm = (props) => {
         <DatePicker
           ref={dateTimeRef}
           id="date"
-          type="date"
-          label="Exam date: "
-          minDate={date}
+          label="Exam date"
+          min={date}
+          isValid={isDateValid}
+          isTouched={isDateTouched}
+          onBlur={dateBlurHandler}
+          onChange={dateChangeHandler}
         />
         <Select
           ref={subjectRef}
@@ -63,7 +83,7 @@ const AddExamForm = (props) => {
           label="Subject: "
           items={props.items}
         />
-        <Button type="submit" disabled={!isNameValid}>
+        <Button type="submit" disabled={!isFormValid}>
           Submit
         </Button>
       </form>

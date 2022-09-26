@@ -22,7 +22,7 @@ namespace Server.DataInitializers
                 _unitOfWork.Exams.Add(new Exam()
                 {
                     ExamName = "Ispit #1",
-                    ExamDate = DateTime.Now,
+                    ExamDate = DateTime.Now.AddDays(3),
                     SubjectId = 1,
                     Subject = _unitOfWork.Subjects.GetSubject(1),
                 });

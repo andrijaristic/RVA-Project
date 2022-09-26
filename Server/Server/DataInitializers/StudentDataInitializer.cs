@@ -31,8 +31,9 @@ namespace Server.DataInitializers
                     _unitOfWork.Students.Add(new Student()
                     {
                         Name = el.Name,
-                        LastName = el.Lastname
-                    });
+                        LastName = el.Lastname,
+                        UserUsername = el.Username
+                    }); ;
                 }
 
                 _unitOfWork.Save();
@@ -40,11 +41,11 @@ namespace Server.DataInitializers
             }
 
             // Kreiraj novog studenta.
-            _unitOfWork.Students.Add(new Student()
-            {
-                Name = "Pera",
-                LastName = "Peric"
-            });
+            //_unitOfWork.Students.Add(new Student()
+            //{
+            //    Name = "Pera",
+            //    LastName = "Peric"
+            //});
 
             _unitOfWork.Save();
         }

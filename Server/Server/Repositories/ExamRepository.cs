@@ -31,7 +31,7 @@ namespace Server.Repositories
 
         public async Task<List<Exam>> GetAllExamsComplete()
         {
-            List<Exam> exams = await _dbContext.Exams.Include(x => x.StudentResults).ToListAsync();
+            List<Exam> exams = await _dbContext.Exams.Include(x => x.StudentResults).Include(x => x.Subject).ToListAsync();
             return exams;
         }
 

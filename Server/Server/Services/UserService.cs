@@ -81,43 +81,9 @@ namespace Server.Services
             AuthDTO authDTO = _mapper.Map<AuthDTO>(user);
             authDTO.Token = token;
 
-            // #TODO: Improve and/or simplify logic.
-            //List<Student> students = await _unitOfWork.Students.GetStudentsForUser(loginDTO.Username);
-            //Student student = students[0];
-            //students.Clear();
-            //Student student = await _unitOfWork.Students.GetStudentForUser(loginDTO.Username);
-
-            //List<StudentResult> results = await _unitOfWork.StudentResults.GetExamsForStudent(student.Id);
-
-            //List<Exam> exams = new List<Exam>();
-            //foreach (var el in results)
-            //{
-            //    //Exam exam = await _unitOfWork.Exams.GetExamAsync(el.ExamId);
-            //    Exam exam = await _unitOfWork.Exams.GetExamComplete(el.ExamId);
-            //    if (exam != null)
-            //    {
-            //        exams.Add(exam);
-            //    }
-            //}
-
-            // Priority => #TODO: Simplify. 17/08 - Fixed with repo function above.
-            //foreach (var el in exams)
-            //{
-            //    foreach (var _el in results)
-            //    {
-            //        if (_el.ExamId == el.Id)
-            //        {
-            //            el.StudentResults.Add(_el);
-            //        }
-            //    }
-            //}
-
-            //authDTO.Exams = exams;
-
             return authDTO;
         }
 
-        // Make a new Student class entity every time STUDENT is registered.
         public async Task<DisplayUserDTO> RegisterNewUser(RegisterDTO registerDTO)
         {
             User user = _mapper.Map<User>(registerDTO);

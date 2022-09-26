@@ -15,6 +15,7 @@ const ExamItem = (props) => {
     return (
       <li className={classes.exam}>
         <section className={classes.info}>
+          <p className={classes.subject}>{props.subject}</p>
           <h2>{props.name}</h2>
           <p>{props.dateTime}</p>
         </section>
@@ -27,8 +28,6 @@ const ExamItem = (props) => {
     );
   }
 
-  // !Important
-  // TODO: Odvratno, popravi ko boga te molim.
   let clickHandlerContent = null;
   let buttonContent = null;
 

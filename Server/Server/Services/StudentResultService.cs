@@ -22,8 +22,6 @@ namespace Server.Services
 
         public async Task<DisplayExamDTO> AddStudentToExam(AddStudentResultDTO addStudentResultDTO)
         {
-            //
-            // Move to Exam validation file and only call validation function.
             Exam exam = await _unitOfWork.Exams.GetExamComplete(addStudentResultDTO.ExamId);
             if (exam == null)
             {

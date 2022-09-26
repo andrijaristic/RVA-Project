@@ -60,7 +60,11 @@ const AddExam = () => {
       0
     );
 
-    console.log(subjectId);
+    console.log({
+      examName: examData.name,
+      subjectId: subjectId,
+      examDate: examData.date,
+    });
 
     const requestConfig = {
       url: "https://localhost:44344/api/Exams",
@@ -83,6 +87,8 @@ const AddExam = () => {
         title: data.title,
         message: data.message,
       });
+
+      return;
     }
 
     setInfoData({

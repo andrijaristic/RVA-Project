@@ -31,7 +31,7 @@ namespace Server.DataInitializers
 
                 _unitOfWork.Subjects.Add(new Subject()
                 {
-                    SubjectName = "Razvoj viseslojnog softvera"
+                    SubjectName = "Razvoj viseslojnog aplikacija u EES"
                 });
 
                 _unitOfWork.Subjects.Add(new Subject()

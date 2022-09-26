@@ -28,6 +28,15 @@ namespace Server.DataInitializers
                     UserType = Enums.EUserType.ADMIN
                 });
 
+                _unitOfWork.Users.Add(new User()
+                {
+                    Name = "Andrija",
+                    Lastname = "Ristic",
+                    Username = "student",
+                    Password = BCrypt.Net.BCrypt.HashPassword("student"),
+                    UserType = Enums.EUserType.STUDENT
+                });
+
                 _unitOfWork.Save();
             }
         }

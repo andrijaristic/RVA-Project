@@ -37,6 +37,7 @@ const Students = () => {
   const { isLoading, sendRequest } = useHttp();
   const [students, setStudents] = useState(null);
   const [exams, setExams] = useState(null);
+  const [toggle, setToggle] = useState(false);
 
   const initFilter = {
     name: "",
@@ -65,7 +66,6 @@ const Students = () => {
       }
 
       setStudents(data);
-      console.log(data);
     };
 
     if (isInit) {
@@ -74,12 +74,13 @@ const Students = () => {
 
     const timer = setTimeout(async () => {
       await getStudents();
+      setToggle((prevState) => !prevState);
     }, 10000);
 
     return () => {
       clearTimeout(timer);
     };
-  }, [token, sendRequest]);
+  }, [token, sendRequest, toggle]);
 
   useEffect(() => {
     const getExams = async () => {

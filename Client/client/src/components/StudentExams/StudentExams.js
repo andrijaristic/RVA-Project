@@ -77,7 +77,7 @@ const StudentExams = () => {
 
   const hideModalHandler = () => {
     setInfoData(null);
-    history.replace("/students");
+    history.replace(`/students/${studentId}`);
   };
 
   const removeStudentFromExamHandler = async (examId) => {
@@ -100,7 +100,14 @@ const StudentExams = () => {
         title: data.title,
         message: data.message,
       });
+
+      return;
     }
+
+    setInfoData({
+      title: "Removal successful",
+      message: "The student has been successfuly removed from exam",
+    });
   };
 
   const editExamHandler = async (updatedExam) => {
@@ -123,6 +130,8 @@ const StudentExams = () => {
         title: data.title,
         message: data.message,
       });
+
+      return;
     }
   };
 

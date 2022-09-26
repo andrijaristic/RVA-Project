@@ -15,6 +15,19 @@
   border-bottom: none;
 }
 
+.exam .subject {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 0.98rem;
+  color: rgb(118, 150, 255);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.exam h2 {
+  margin-top: 6px;
+  padding-top: 0;
+}
+
 .exam figure {
   display: flex;
   margin: 10px;

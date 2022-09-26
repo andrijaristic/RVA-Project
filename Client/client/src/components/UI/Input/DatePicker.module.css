@@ -17,10 +17,17 @@
 }
 
 .invalid p {
-  color: #ca3e51;
+  color: #d3233b;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .invalid input {
   border-color: #aa0b20;
   background-color: #ffeff1;
+}
+
+.invalid label {
+  color: #ff0022;
+  border-color: white;
 }
