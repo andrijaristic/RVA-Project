@@ -13,11 +13,11 @@ import LoadingModal from "../UI/Modals/LoadingModal";
 import InfoModal from "../UI/Modals/InfoModal";
 
 const USER_TYPES = [
+  { id: 0, name: "ADMIN" },
   {
     id: 1,
     name: "STUDENT",
   },
-  { id: 2, name: "ADMIN" },
 ];
 
 const initInputState = {
@@ -96,6 +96,7 @@ const RegisterForm = () => {
     inputState.isLastNameValid;
 
   const usernameChangeHandler = () => {
+    console.log(userTypeRef.current.value);
     dispatchInputState({
       type: "USERNAME_CHANGE",
       value: isNotEmpty(usernameRef.current.value),
@@ -176,7 +177,15 @@ const RegisterForm = () => {
     };
 
     const data = await sendRequest(requestConfig);
-    // ErrorDTO i SuccessDTO koji nedostaju na Backend-u.
+    if (data.hasError) {
+      setInfoData({
+        title: data.title,
+        message: data.hasError ? data.errorMessage : "User successfully added.",
+      });
+
+      return;
+    }
+
     setInfoData({
       title: data.title,
       message: data.hasError ? data.errorMessage : "User successfully added.",

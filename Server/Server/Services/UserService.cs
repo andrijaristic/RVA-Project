@@ -3,6 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using Server.Dto.LogsDto;
 using Server.Dto.UserDto;
+using Server.Enums;
 using Server.Interfaces.ServiceInterfaces;
 using Server.Interfaces.TokenMakerInterfaces;
 using Server.Interfaces.UnitOfWorkInterfaces;
@@ -95,15 +96,19 @@ namespace Server.Services
             }
 
             user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
-            user.UserType = Enums.EUserType.STUDENT;
-
-            Student student = _mapper.Map<Student>(registerDTO);
-            student.UserUsername = user.Username;
+            Enum.TryParse<EUserType>(registerDTO.UserType, out EUserType userType);
+            user.UserType = userType;
 
             await _unitOfWork.Users.AddAsync(user);
-            await _unitOfWork.Students.AddAsync(student);
-            await _unitOfWork.SaveAsync();
+            if (userType == EUserType.STUDENT)
+            {
+                Student student = _mapper.Map<Student>(registerDTO);
+                student.UserUsername = user.Username;
 
+                await _unitOfWork.Students.AddAsync(student);
+            }
+
+            await _unitOfWork.SaveAsync();
             return _mapper.Map<DisplayUserDTO>(user);
         }
 

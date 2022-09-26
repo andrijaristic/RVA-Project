@@ -2514,3 +2514,31 @@
 2022-09-26 17:58:17.569 +02:00 [INF] admin: Getting all exams for student with ID 18
 2022-09-26 17:58:17.955 +02:00 [INF] student: Getting all exams
 2022-09-26 17:58:17.964 +02:00 [INF] student: Getting all exams
+2022-09-26 20:09:38.259 +02:00 [INF] admin2: Getting ID for corresponding student
+2022-09-26 20:09:38.313 +02:00 [INF] : Getting all exams for student with ID 19
+2022-09-26 20:16:39.287 +02:00 [INF] admin2: Getting all exams
+2022-09-26 20:16:39.287 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:16:49.268 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:16:49.268 +02:00 [INF] admin2: Getting all exams
+2022-09-26 20:16:49.321 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:16:59.328 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:16:59.362 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:17:09.374 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:17:09.409 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:17:19.420 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:17:19.458 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:17:29.469 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:17:29.498 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:17:39.511 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:17:39.545 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:17:49.559 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:17:49.592 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:17:59.608 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:17:59.639 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:19:52.048 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:19:52.051 +02:00 [INF] admin2: Getting all exams
+2022-09-26 20:20:02.044 +02:00 [INF] admin2: Getting all exams
+2022-09-26 20:20:02.044 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:20:02.079 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:20:12.081 +02:00 [INF] admin2: Getting all registered students
+2022-09-26 20:20:12.114 +02:00 [INF] admin2: Getting all registered students
