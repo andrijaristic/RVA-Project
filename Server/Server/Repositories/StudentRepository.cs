@@ -27,7 +27,7 @@ namespace Server.Repositories
 
         public async Task<Student> GetStudentComplete(int studentId)
         {
-            Student student = await _dbContext.Students.Where(x => x.Id == studentId).Include(x => x.Exams).ThenInclude(x => x.Subject).SingleOrDefaultAsync();
+            Student student = await _dbContext.Students.Where(x => x.Id == studentId).Include(x => x.Exams).ThenInclude(x => x.Subject).Include(x => x.Exams).ThenInclude(x => x.StudentResults).SingleOrDefaultAsync();
             return student;
         }
 

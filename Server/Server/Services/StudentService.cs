@@ -3,6 +3,7 @@ using Server.Dto.StudentDto;
 using Server.Interfaces.ServiceInterfaces;
 using Server.Interfaces.UnitOfWorkInterfaces;
 using Server.Models;
+using System.Linq;
 
 namespace Server.Services
 {
@@ -26,6 +27,14 @@ namespace Server.Services
             }
 
             Student studentCopy = student.DeepCopy();
+            foreach (Exam exam in studentCopy.Exams)
+            {
+                foreach (StudentResult result in exam.StudentResults)
+                {
+                    result.StudentId = studentCopy.Id;
+                    result.Student = studentCopy;
+                }
+            }
             await _unitOfWork.Students.AddAsync(studentCopy);
 
             foreach (Exam exam in studentCopy.Exams)
