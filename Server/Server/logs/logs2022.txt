@@ -3580,3 +3580,67 @@
 2022-09-28 12:16:18.538 +02:00 [INF] admin: Getting all exams
 2022-09-28 12:16:31.526 +02:00 [INF] admin: Getting all exams
 2022-09-28 12:16:31.534 +02:00 [INF] admin: Getting all exams
+2022-09-28 17:32:33.191 +02:00 [INF] student3: Getting ID for corresponding student
+2022-09-28 17:32:33.242 +02:00 [INF] : Getting all exams for student with ID 34
+2022-09-28 17:32:34.523 +02:00 [INF] student3: Getting all exams
+2022-09-28 17:32:37.516 +02:00 [INF] student3: Getting all available subjects
+2022-09-28 17:32:54.535 +02:00 [INF] student3: Updating user information
+2022-09-28 17:33:16.523 +02:00 [INF] admin3: Getting all exams
+2022-09-28 17:33:16.531 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:33:18.174 +02:00 [INF] admin3: Getting all exams for student with ID 35
+2022-09-28 17:33:18.885 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:33:18.886 +02:00 [INF] admin3: Getting all exams
+2022-09-28 17:33:20.098 +02:00 [INF] admin3: Getting all exams for student with ID 1
+2022-09-28 17:33:21.288 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:33:21.288 +02:00 [INF] admin3: Getting all exams
+2022-09-28 17:33:23.311 +02:00 [INF] admin3: Getting all exams for student with ID 2
+2022-09-28 17:33:25.459 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:33:25.459 +02:00 [INF] admin3: Getting all exams
+2022-09-28 17:33:26.829 +02:00 [INF] admin3: Getting all exams
+2022-09-28 17:33:28.501 +02:00 [INF] admin3: Listing all students registered for exam with ID 32
+2022-09-28 17:33:29.940 +02:00 [INF] admin3: Getting all exams
+2022-09-28 17:33:31.298 +02:00 [INF] admin3: Listing all students registered for exam with ID 31
+2022-09-28 17:33:33.393 +02:00 [INF] admin3: Getting all exams
+2022-09-28 17:33:40.709 +02:00 [INF] admin3: Getting all available subjects
+2022-09-28 17:33:42.307 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:33:42.307 +02:00 [INF] admin3: Getting all exams
+2022-09-28 17:33:52.295 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:33:52.300 +02:00 [INF] admin3: Getting all exams
+2022-09-28 17:33:52.339 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:34:02.340 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:34:02.379 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:34:12.382 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:34:12.426 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:34:22.444 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:34:22.481 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:34:32.483 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:34:32.522 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:34:45.915 +02:00 [INF] admin3: Getting all exams
+2022-09-28 17:34:45.915 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:34:47.389 +02:00 [INF] admin3: Getting all exams for student with ID 35
+2022-09-28 17:34:48.086 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:34:48.086 +02:00 [INF] admin3: Getting all exams
+2022-09-28 17:34:58.076 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:34:58.083 +02:00 [INF] admin3: Getting all exams
+2022-09-28 17:34:58.121 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:35:05.802 +02:00 [INF] admin3: Getting all exams
+2022-09-28 17:35:05.802 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:35:15.805 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:35:15.805 +02:00 [INF] admin3: Getting all exams
+2022-09-28 17:35:15.857 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:35:25.872 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:35:25.921 +02:00 [INF] admin3: Getting all registered students
+2022-09-28 17:36:33.958 +02:00 [INF] student3: Getting ID for corresponding student
+2022-09-28 17:36:33.969 +02:00 [INF] : Getting all exams for student with ID 36
+2022-09-28 17:36:40.537 +02:00 [INF] student3: Updating user information
+2022-09-28 17:36:49.927 +02:00 [INF] student3: Getting all exams
+2022-09-28 17:36:51.561 +02:00 [INF] student3: Getting all available subjects
+2022-09-28 17:36:54.405 +02:00 [INF] student3: Getting all user logs
+2022-09-28 17:37:18.495 +02:00 [INF] admin: Getting all registered students
+2022-09-28 17:37:18.503 +02:00 [INF] admin: Getting all exams
+2022-09-28 17:37:19.899 +02:00 [INF] admin: Getting all exams for student with ID 33
+2022-09-28 17:37:21.318 +02:00 [INF] admin: Getting all registered students
+2022-09-28 17:37:21.320 +02:00 [INF] admin: Getting all exams
+2022-09-28 17:37:22.518 +02:00 [INF] admin: Getting all exams for student with ID 22
+2022-09-28 17:37:23.401 +02:00 [INF] admin: Getting all registered students
+2022-09-28 17:37:23.402 +02:00 [INF] admin: Getting all exams

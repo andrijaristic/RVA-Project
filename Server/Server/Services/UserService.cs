@@ -95,6 +95,12 @@ namespace Server.Services
                 throw new Exception(result.Message);
             }
 
+            User userExists = await _unitOfWork.Users.FindUserByUsername(registerDTO.Username);
+            if (userExists != null)
+            {
+                throw new Exception($"User with username [{registerDTO.Username}] already exists!");
+            }
+
             user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
             Enum.TryParse<EUserType>(registerDTO.UserType, out EUserType userType);
             user.UserType = userType;
