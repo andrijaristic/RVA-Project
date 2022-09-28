@@ -3175,3 +3175,408 @@
 2022-09-27 15:37:49.717 +02:00 [INF] admin: Getting all registered students
 2022-09-27 15:37:59.726 +02:00 [INF] admin: Getting all registered students
 2022-09-27 15:37:59.763 +02:00 [INF] admin: Getting all registered students
+2022-09-28 11:37:44.591 +02:00 [INF] guest: Getting ID for corresponding student
+2022-09-28 11:37:44.646 +02:00 [INF] : Getting all exams for student with ID 2
+2022-09-28 11:37:47.749 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:37:49.378 +02:00 [INF] guest: Viewing results of exam with ID 8 for student with ID 2
+2022-09-28 11:37:59.746 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:37:59.759 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:38:01.951 +02:00 [INF] admin: Getting all available subjects
+2022-09-28 11:38:12.524 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:38:12.533 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:38:23.843 +02:00 [INF] admin: Creating new exam
+2022-09-28 11:38:25.517 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:38:25.527 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:38:35.605 +02:00 [INF] admin: Getting all available subjects
+2022-09-28 11:38:37.539 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:38:37.549 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:38:49.553 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:38:49.562 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:38:50.678 +02:00 [INF] admin: Creating new exam
+2022-09-28 11:39:01.568 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:39:01.587 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:39:07.901 +02:00 [INF] guest: Adding student with ID 2 to exam with ID 29
+2022-09-28 11:39:07.997 +02:00 [ERR] guest: Past exam application date.
+2022-09-28 11:39:13.589 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:39:13.601 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:39:14.717 +02:00 [INF] guest: Adding student with ID 2 to exam with ID 30
+2022-09-28 11:39:14.749 +02:00 [ERR] guest: Past exam application date.
+2022-09-28 11:39:25.603 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:39:25.615 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:39:37.630 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:39:37.641 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:39:49.656 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:39:49.667 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:40:01.676 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:40:01.685 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:40:13.687 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:40:13.697 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:40:24.548 +02:00 [INF] admin: Getting all available subjects
+2022-09-28 11:40:25.704 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:40:25.714 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:40:37.730 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:40:37.739 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:40:38.376 +02:00 [INF] admin: Creating new exam
+2022-09-28 11:40:49.750 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:40:49.759 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:41:01.773 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:41:01.782 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:41:13.799 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:41:13.809 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:41:25.815 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:41:25.824 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:41:37.836 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:41:37.847 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:41:49.848 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:41:49.856 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:42:01.860 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:42:01.873 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:42:13.877 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:42:13.887 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:42:25.897 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:42:25.906 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:42:37.923 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:42:37.946 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:42:49.960 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:42:49.972 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:42:58.652 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:42:59.831 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:43:00.464 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:43:12.481 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:43:12.495 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:43:22.295 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:43:34.304 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:43:34.319 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:43:46.524 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:43:46.535 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:43:58.544 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:43:58.555 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:44:27.147 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:44:39.151 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:44:39.164 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:44:51.166 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:44:51.178 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:45:03.197 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:45:03.208 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:45:12.226 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:45:24.242 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:45:24.256 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:45:36.277 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:45:36.289 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:45:48.308 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:45:48.319 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:45:50.661 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:46:02.673 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:46:02.687 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:46:14.708 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:46:14.726 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:46:26.739 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:46:26.751 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:46:38.767 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:46:38.778 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:46:50.790 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:46:50.802 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:47:02.822 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:47:02.834 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:47:14.851 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:47:14.864 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:47:26.880 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:47:26.892 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:47:38.895 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:47:38.908 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:47:50.926 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:47:50.937 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:48:02.946 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:48:02.958 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:48:10.028 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:48:36.676 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:48:48.682 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:48:48.694 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:49:00.710 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:49:00.722 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:49:04.021 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:49:16.035 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:49:16.050 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:49:28.057 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:49:28.068 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:49:40.087 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:49:40.098 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:49:44.870 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:49:57.531 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:49:57.545 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:50:10.534 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:50:10.546 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:50:23.527 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:50:23.538 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:50:36.524 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:50:36.545 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:50:41.952 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:50:42.095 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:51:01.096 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:51:09.755 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:51:21.763 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:51:21.777 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:51:33.795 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:51:33.810 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:51:45.829 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:51:45.840 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:51:51.037 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:52:03.041 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:52:03.054 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:52:15.075 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:52:15.086 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:52:27.088 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:52:27.100 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:52:35.681 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:52:47.689 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:52:47.704 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:52:59.711 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:52:59.723 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:53:03.217 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:53:15.533 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:53:15.547 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:53:28.529 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:53:28.540 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:53:36.324 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:53:48.338 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:53:48.352 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:54:00.530 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:54:00.541 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:54:13.534 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:54:13.546 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:54:26.523 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:54:26.535 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:54:39.521 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:54:39.534 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:54:42.702 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:54:54.706 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:54:54.720 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:55:06.732 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:55:06.744 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:55:18.763 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:55:18.777 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:55:32.673 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:55:44.676 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:55:44.696 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:55:44.829 +02:00 [INF] guest: Adding student with ID 2 to exam with ID 15
+2022-09-28 11:55:44.865 +02:00 [ERR] guest: Past exam application date.
+2022-09-28 11:55:56.711 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:55:56.722 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:56:03.018 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:56:15.031 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:56:15.041 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:56:27.050 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:56:27.062 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:56:38.334 +02:00 [INF] guest: Viewing results of exam with ID 8 for student with ID 2
+2022-09-28 11:56:39.065 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:56:39.075 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:56:51.081 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:56:51.091 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:57:03.098 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:57:03.108 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:57:06.568 +02:00 [INF] guest: Viewing results of exam with ID 8 for student with ID 2
+2022-09-28 11:57:15.112 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:57:15.122 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:57:27.124 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:57:27.132 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:57:39.141 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:57:39.149 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:57:51.154 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:57:51.162 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:58:03.181 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:58:03.189 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:58:15.195 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:58:15.204 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:58:27.211 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:58:27.219 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:58:39.529 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:58:39.537 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:58:52.523 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:58:52.532 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:59:04.536 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:59:04.545 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:59:16.557 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:59:16.565 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:59:28.571 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:59:28.580 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:59:38.476 +02:00 [INF] admin: Getting all available subjects
+2022-09-28 11:59:40.594 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:59:40.602 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:59:51.076 +02:00 [INF] admin: Creating new exam
+2022-09-28 11:59:52.604 +02:00 [INF] guest: Getting all exams
+2022-09-28 11:59:52.618 +02:00 [INF] guest: Getting all exams
+2022-09-28 12:00:04.627 +02:00 [INF] guest: Getting all exams
+2022-09-28 12:00:04.636 +02:00 [INF] guest: Getting all exams
+2022-09-28 12:00:14.058 +02:00 [INF] guest: Adding student with ID 2 to exam with ID 31
+2022-09-28 12:00:14.671 +02:00 [INF] guest: Adding student with ID 2 to exam with ID 32
+2022-09-28 12:00:16.647 +02:00 [INF] guest: Getting all exams
+2022-09-28 12:00:16.655 +02:00 [INF] guest: Getting all exams
+2022-09-28 12:00:21.851 +02:00 [INF] guest1: Getting ID for corresponding student
+2022-09-28 12:00:21.860 +02:00 [INF] : Getting all exams for student with ID 4
+2022-09-28 12:00:25.282 +02:00 [INF] guest1: Getting all exams
+2022-09-28 12:00:26.508 +02:00 [INF] guest1: Adding student with ID 4 to exam with ID 31
+2022-09-28 12:00:26.919 +02:00 [INF] guest1: Adding student with ID 4 to exam with ID 32
+2022-09-28 12:00:54.579 +02:00 [INF] student: Getting ID for corresponding student
+2022-09-28 12:00:54.586 +02:00 [INF] : Getting all exams for student with ID 18
+2022-09-28 12:00:56.426 +02:00 [INF] student: Getting all exams
+2022-09-28 12:00:59.998 +02:00 [INF] student: Adding student with ID 18 to exam with ID 31
+2022-09-28 12:01:00.468 +02:00 [INF] student: Adding student with ID 18 to exam with ID 32
+2022-09-28 12:01:04.469 +02:00 [INF] admin: Getting all registered students
+2022-09-28 12:01:04.471 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:01:07.600 +02:00 [INF] admin: Getting all exams for student with ID 2
+2022-09-28 12:01:08.429 +02:00 [INF] student: Getting all exams
+2022-09-28 12:01:08.437 +02:00 [INF] student: Getting all exams
+2022-09-28 12:01:10.212 +02:00 [INF] admin: Getting all registered students
+2022-09-28 12:01:10.218 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:01:11.746 +02:00 [INF] admin: Getting all exams for student with ID 4
+2022-09-28 12:01:12.944 +02:00 [INF] admin: Getting all registered students
+2022-09-28 12:01:12.946 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:01:14.605 +02:00 [INF] admin: Getting all exams for student with ID 18
+2022-09-28 12:01:26.602 +02:00 [INF] admin: Getting all exams for student with ID 18
+2022-09-28 12:01:38.296 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:01:42.796 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:01:47.081 +02:00 [INF] admin: Grading student with ID 2 for exam with ID 32
+2022-09-28 12:01:48.574 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:01:50.187 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:01:51.753 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:01:53.421 +02:00 [INF] admin: Listing all students registered for exam with ID 31
+2022-09-28 12:01:55.550 +02:00 [INF] admin: Grading student with ID 2 for exam with ID 31
+2022-09-28 12:01:55.586 +02:00 [ERR] admin: Exam has not started. Cannot be graded.
+2022-09-28 12:01:57.214 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:01:58.989 +02:00 [INF] admin: Listing all students registered for exam with ID 31
+2022-09-28 12:02:00.062 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:02:01.182 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:02:02.788 +02:00 [INF] admin: Getting all registered students
+2022-09-28 12:02:02.819 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:02:04.084 +02:00 [INF] admin: Getting all exams for student with ID 2
+2022-09-28 12:02:07.058 +02:00 [INF] admin: Removing student with ID 2 from exam with ID 32
+2022-09-28 12:02:07.094 +02:00 [ERR] admin: Student with ID [2] has already been graded for Ispit koji je zavrsen.
+2022-09-28 12:02:10.381 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:02:11.842 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:02:23.842 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:02:35.866 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:02:47.877 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:02:59.900 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:03:11.926 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:03:23.951 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:03:35.967 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:03:47.982 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:04:00.005 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:04:12.027 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:04:24.044 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:04:36.063 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:04:48.089 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:05:00.108 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:05:12.123 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:05:24.147 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:05:36.165 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:05:48.183 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:06:00.196 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:06:12.221 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:06:24.231 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:06:36.244 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:06:48.258 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:07:00.289 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:07:12.525 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:07:13.609 +02:00 [INF] admin: Getting all user logs
+2022-09-28 12:07:22.663 +02:00 [INF] admin: Getting all registered students
+2022-09-28 12:07:22.670 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:07:25.452 +02:00 [INF] admin: Getting all exams for student with ID 18
+2022-09-28 12:07:29.992 +02:00 [INF] admin: Getting all available subjects
+2022-09-28 12:07:32.950 +02:00 [INF] admin: Getting all available subjects
+2022-09-28 12:07:34.513 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:07:36.629 +02:00 [INF] admin: Listing all students registered for exam with ID 32
+2022-09-28 12:07:39.367 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:07:41.119 +02:00 [INF] admin: Listing all students registered for exam with ID 31
+2022-09-28 12:07:43.028 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:07:43.980 +02:00 [INF] admin: Listing all students registered for exam with ID 8
+2022-09-28 12:07:45.804 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:07:47.123 +02:00 [INF] admin: Listing all students registered for exam with ID 13
+2022-09-28 12:07:47.170 +02:00 [ERR] admin: There are no students registered for exam with ID [13].
+2022-09-28 12:07:48.778 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:07:49.800 +02:00 [INF] admin: Listing all students registered for exam with ID 14
+2022-09-28 12:07:49.831 +02:00 [ERR] admin: There are no students registered for exam with ID [14].
+2022-09-28 12:07:51.055 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:07:52.237 +02:00 [INF] admin: Listing all students registered for exam with ID 15
+2022-09-28 12:07:52.271 +02:00 [ERR] admin: There are no students registered for exam with ID [15].
+2022-09-28 12:07:53.199 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:08:05.192 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:08:05.201 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:08:17.517 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:08:17.527 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:08:30.525 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:08:30.534 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:08:43.526 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:08:43.536 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:08:56.522 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:08:56.531 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:09:09.518 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:09:09.527 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:09:22.523 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:09:22.533 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:09:35.527 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:09:35.537 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:09:48.526 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:09:48.535 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:10:01.521 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:10:01.530 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:10:14.519 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:10:14.527 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:10:27.524 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:10:27.532 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:10:40.518 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:10:40.527 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:10:53.528 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:10:53.537 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:11:06.517 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:11:06.526 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:11:19.520 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:11:19.529 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:11:32.518 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:11:32.527 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:11:45.531 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:11:45.540 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:11:58.521 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:11:58.530 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:12:11.517 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:12:11.526 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:12:24.524 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:12:24.532 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:12:37.517 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:12:37.526 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:12:50.518 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:12:50.528 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:13:03.520 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:13:03.534 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:13:16.518 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:13:16.528 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:13:29.529 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:13:29.539 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:13:42.526 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:13:42.535 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:13:55.524 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:13:55.533 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:14:08.519 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:14:08.528 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:14:21.527 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:14:21.537 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:14:34.516 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:14:34.525 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:14:47.523 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:14:47.531 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:15:00.529 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:15:00.540 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:15:13.521 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:15:13.530 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:15:26.518 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:15:26.528 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:15:39.525 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:15:39.533 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:15:52.515 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:15:52.524 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:16:05.518 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:16:05.527 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:16:18.529 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:16:18.538 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:16:31.526 +02:00 [INF] admin: Getting all exams
+2022-09-28 12:16:31.534 +02:00 [INF] admin: Getting all exams

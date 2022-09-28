@@ -22,15 +22,18 @@ const ExamList = (props) => {
       "en-US",
       options
     );
+    const formattedDateTime = new Date(item.examDate).getTime();
 
-    const currentDate = new Date().toLocaleTimeString("en-US", options);
-    const datePassed = formattedDate <= currentDate;
+    // const currentDate = new Date().toLocaleTimeString("en-US", options);
+    const currentDateTime = new Date().getTime();
 
+    const canRegister = formattedDateTime > currentDateTime;
     let registeredToExam = null;
     if (!props.admin) {
       registeredToExam = registeredExams.some((x) => x.id === item.id);
     }
-    console.log(item);
+
+    // console.log(item);
     return (
       <ExamItem
         key={item.id}
@@ -42,7 +45,7 @@ const ExamList = (props) => {
         onClick={registeredToExam ? props.onRemove : props.onAdd}
         onView={props.onView}
         registered={registeredToExam}
-        datePassed={datePassed}
+        canRegister={canRegister}
         admin={props.admin}
       />
     );

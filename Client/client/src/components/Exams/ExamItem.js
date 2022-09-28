@@ -31,7 +31,7 @@ const ExamItem = (props) => {
   let clickHandlerContent = null;
   let buttonContent = null;
 
-  if (props.registered && props.datePassed) {
+  if (props.registered && !props.canRegister) {
     // Registrovan i prosao datum prijave.
     clickHandlerContent = viewHandler;
     buttonContent = (
@@ -39,7 +39,7 @@ const ExamItem = (props) => {
         View Results
       </Button>
     );
-  } else if (props.registered && !props.datePassed) {
+  } else if (props.registered && props.canRegister) {
     // Registrovan i nije prosao datum prijave.
     clickHandlerContent = clickHandler;
     buttonContent = (
@@ -47,7 +47,7 @@ const ExamItem = (props) => {
         Remove
       </Button>
     );
-  } else if (!props.registered && !props.datePassed) {
+  } else if (!props.registered && props.canRegister) {
     // Nije registrovan i nije prosao datum prijave.
     clickHandlerContent = clickHandler;
     buttonContent = (
